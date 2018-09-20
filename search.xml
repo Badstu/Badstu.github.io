@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title>&#39;Numpy中怎么得到向量中出现次数最多的元素值？&#39;</title>
+      <link href="/2018/09/20/Numpy%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BE%97%E5%88%B0%E5%90%91%E9%87%8F%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%85%83%E7%B4%A0%E5%80%BC%EF%BC%9F/"/>
+      <url>/2018/09/20/Numpy%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BE%97%E5%88%B0%E5%90%91%E9%87%8F%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%85%83%E7%B4%A0%E5%80%BC%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<p>输入一个向量x，元素值非负， 要求得到x中出现次数最多的元素值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">count = np.bincount(x)</span><br><span class="line">&gt; array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], dtype=int64)</span><br><span class="line">argmax_value = np.argmax(count)</span><br></pre></td></tr></table></figure><p>函数bincount(x) 的作用是返回一个长度为x中最大元素+1的np.ndarray，其中每个元素对应于其索引值在x中出现的次数，比如位置1上的值为2，表示1在x中出现了两次。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> numpy </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> python </tag>
+            
+            <tag> numpy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>&#39;今日记录&#39;</title>
+      <link href="/2018/09/18/%E4%BB%8A%E6%97%A5%E8%AE%B0%E5%BD%95/"/>
+      <url>/2018/09/18/%E4%BB%8A%E6%97%A5%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>第一次写博客，把这两天新学的tricks记录下来，以便翻阅查找。</p><p>numpy里面的一些函数：</p><ul><li><p><code>axis = 0</code>：以列为计算对象；<code>axis = 1</code>：以行为计算对象（这点和平时用法相反）</p></li><li><p><code>sum(matrix, axis = 1)</code>，对每行进行相加，得到一个向量，默认返回行向量</p></li><li><p><code>np.linalg.norm(x, ord = None, ...)</code>，求向量x的范数（是一个标量）</p><blockquote><p>ord参数的用法：</p><p>默认ord = 2，L2范数 sqrt(sigma(xi^2))</p><p>​        ord = 1，L1范数 sigma|xi|</p><p>​        ord = np.inf，L无穷范数 max(|xi|)</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔， 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>&#39;my-first-blog&#39;</title>
       <link href="/2018/09/18/my-first-blog/"/>
       <url>/2018/09/18/my-first-blog/</url>
