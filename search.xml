@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title>数据存储系统与技术 课堂笔记1</title>
+      <link href="/2018/09/30/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+      <url>/2018/09/30/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF/</url>
+      
+        <content type="html"><![CDATA[<p>时间：2018年9月30日</p><ul><li>存储硬件组成</li><li>存储软件过程</li><li><strong>磁盘基本原理</strong></li><li>盘阵系统结构</li><li>缓存调度算法</li><li>并行存取技术</li></ul><p><em>课前参考论文：</em></p><blockquote><ol><li>Arrakis the operating system is the control plane</li><li>High Performance Packet Processing with FlexNIC</li><li>Aerie flexible file-system interfaces to storage-class memory</li></ol></blockquote><h3 id="磁盘基本原理"><a href="#磁盘基本原理" class="headerlink" title="磁盘基本原理"></a>磁盘基本原理</h3><h4 id="磁盘硬件"><a href="#磁盘硬件" class="headerlink" title="磁盘硬件"></a>磁盘硬件</h4><ul><li><p>硬盘接口</p><ul><li>ATA/IDE 硬盘接口</li><li>SATA 硬盘接口</li><li>SAS 接口（转为满足高性能企业需求而设计，并兼容SATA）</li></ul></li><li><p>企业级硬盘与桌面级硬盘的区别</p><ul><li>上电时间</li><li>Duty Cycle（工作负荷）</li><li><strong>错误纠正功能</strong>（奇偶校验）</li><li>MTBF [六十万小时 — 一百二十万小时]</li><li>SCT</li><li>负载管理（用于控制机体温度及保证长时间工作可靠性）</li></ul></li><li><p>盘面密度</p><ul><li>Determines both capacity and performance</li><li>Density Metrics:<ul><li>Linear density (Bits/inch or BPI)</li><li>Track density (Track/inch or TPI)</li><li>Areal Density = BPI*TPI</li></ul></li><li>单位颗粒可表示状态提高，容量提高，对控制电路要求越高，更容易坏。（手机的闪存颗粒单颗粒可表示三个状态）</li><li>密度越大，记录单元所占面积越小，磁信号越小，要求磁头离盘面越近（<strong>飞高</strong>越小）</li></ul></li><li><p>磁盘IO性能</p><p>读写一个磁盘块需要的时间由下面三个因素决定</p><ul><li>寻道时间（将磁头臂移动到相应的柱面所需的时间） 3~15ms #大部分时间在寻道，移动磁头臂。</li><li>旋转延时（相应的扇区旋转到磁头下面所需的时间） 2~5ms</li><li>数据传输时间</li></ul></li><li><p>硬盘寻址模式</p><p>物理地址和逻辑地址</p></li><li><p>磁盘IO时间</p><ul><li>由于柱面定位时间在访问时间中占主要部分，合理组织磁盘数据的存储位置可提高磁盘I/O性能</li><li>存放在连续磁道上的扇区</li><li>随机分布时的访问时间为连续分布时的33.5倍</li></ul></li><li><p>磁头臂的调度算法</p><ul><li>FCFS算法：先来先服务</li><li>SSF算法（最短寻道算法）：找离当前磁道最近的柱面</li><li>电梯算法<ul><li>SCAN模式：从一端到另一端，然后折返，再折返</li><li>LOOK模式：不必到达终点，只需到达最两端的IO就可以折返</li><li>C-LOOK模式：单向扫描，不折返</li></ul></li></ul></li><li><p>Mysql doublewrite</p><p>把一串随机的写操作变成顺序的写入，降低持久化的时间。</p><blockquote><p><strong>mysql的innodb存储引擎中，有个doublewrite模块</strong></p><p>innodb的数据页大小一般是16KB，mysql的存储数据的最小单位也是页，而操作系统不能保障一个数据页的<strong>原子性</strong>，可能会在写入一半时数据库宕机，这种情况称为部分写失效（partial page write），导致数据丢失。</p><p>当触发数据缓冲池中的賍页进行刷新时，并不直接写磁盘，而是通过memcpy函数将賍页复制到内存中的doublewrite buffer，之后通过doublewrite buffer再分两次，每次1MB顺序写入共享表空间的物理磁盘上。</p><p>马上调用fsync函数，同步賍页进磁盘，由于在这个过程中doublewrite页的存储是连续的，<strong>因此写入磁盘为顺序写</strong>，性能很高。</p></blockquote></li><li><p>理论性能分析：A Little Queuing Theory</p><ul><li>在I/O系统设计需要理论性能分析工具：Little队列理论</li><li>两个因素：throughput VS response time</li><li>Single-Server Model<ul><li>Server utilization = Arrival rate * Time_server</li><li>Response time </li></ul></li></ul></li><li><p>进一步阅读</p><ul><li>An Introduction to Disk Drive Modeling</li><li>Information Storage and Management</li><li>Computer Architecture: A Quantitative Approach</li></ul></li><li><p>课堂目标</p><ul><li>了解老式磁盘工作原理</li><li>从文件系统上了解优化等工作原理，掌握优化方法</li><li>分析系统负载，系统容量等</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>pandas的一些tricks</title>
+      <link href="/2018/09/28/tricks/"/>
+      <url>/2018/09/28/tricks/</url>
+      
+        <content type="html"><![CDATA[<ul><li><code>data_train.describe()</code></li><li><code>pandas.value_counts(data_train.Fare)</code></li><li><code>df.Name.apply(lambda x: x.split(&#39; &#39;)[0])</code></li><li><code>df.drop([&#39;Ticket&#39;, &#39;Name&#39;, &#39;Embark&#39;], axis = 1)</code>删除列要加axis = 1</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> tricks </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> tricks </tag>
+            
+            <tag> pandas </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Numpy中怎么得到向量中出现次数最多的元素值？</title>
       <link href="/2018/09/20/Numpy%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BE%97%E5%88%B0%E5%90%91%E9%87%8F%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%85%83%E7%B4%A0%E5%80%BC%EF%BC%9F/"/>
       <url>/2018/09/20/Numpy%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BE%97%E5%88%B0%E5%90%91%E9%87%8F%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%85%83%E7%B4%A0%E5%80%BC%EF%BC%9F/</url>
@@ -34,12 +84,12 @@
       <link href="/2018/09/18/python%20numpy%20%E7%9A%84%E4%B8%80%E4%BA%9Btricks/"/>
       <url>/2018/09/18/python%20numpy%20%E7%9A%84%E4%B8%80%E4%BA%9Btricks/</url>
       
-        <content type="html"><![CDATA[<p>第一次写博客，把这两天新学的tricks记录下来，以便翻阅查找。</p><p>python 的一些技巧：</p><ul><li><p><code>del a, b</code>：删除某个变量名的内存空间，防止内存错误。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">del</span> a, b</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line"> <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li><li><p><code>plt.plot(x, y, &#39;-o&#39;)</code> </p></li><li><p><code>plt.subplot(x, y, i)</code>：x长，y宽，i第几幅画，从1开始数。</p></li><li><p>lambda 表达式，匿名函数</p><blockquote><p>add = lambda x, y: x + y</p><p>add(1, 2) =&gt; 3</p></blockquote></li><li></li></ul><p>numpy 里面的一些函数：</p><ul><li><p><code>axis = 0</code>：以列为计算对象；<code>axis = 1</code>：以行为计算对象（这点和平时用法相反）。</p></li><li><p>numpy数组里面的()和[]不要搞混了，取索引是[i, j]</p></li><li><p><code>sum(matrix, axis = 1)</code>，对每行进行相加，得到一个向量，默认返回行向量。</p></li><li><p><code>np.linalg.norm(x, ord = None, ...)</code>，求向量x的范数（是一个标量）。</p><blockquote><p>ord参数的用法：</p><p>默认ord = 2，L2范数<br>$$<br>\sqrt{\sum_i x_i ^ 2}<br>$$<br>​        ord = 1，L1范数<br>$$<br>\sum_i{|x_i|}<br>$$<br>​        ord = np.inf，L无穷范数<br>$$<br>\max(|x_i|)<br>$$</p></blockquote></li><li><p><code>np.flatnonzero(y_train == y)</code>：输出y_train == y时的索引数组（默认为非零元素的索引数组）。</p></li><li><p><code>np.random.choice(idx, sample_per_class, replace = False, ...)</code>：从idx中随机选取sample_per_class个，无放回；<code>replace = True</code> 有放回。</p></li><li></li><li><p><code>a = np.reshape(a, (2, -1))</code>： -1的意思是自动计算相应维度。</p></li><li><p><code>np.diag(x)</code>：</p><blockquote><ol><li>x 是矩阵，返回对角元素向量。</li><li>x 是向量，返回对角阵。</li></ol></blockquote></li><li><p><code>np.repeat(a, reqeats, axis = None)</code></p><blockquote><ol><li><p><code>axis = None</code> 每个元素复制repeats次，返回行向量。[1, 1, 2, 2, ……]</p><ol start="2"><li><p><code>axis = 0</code>  沿y轴复制 [[1, 2], </p><p>​                    [1, 2],</p><p>​                    [3, 4],</p><p>​                    [3, 4]]</p><ol start="3"><li><code>axis = 1</code> 沿x轴复制 [[1, 1, 2, 2], </li></ol><p>​                    [3, 3, 4, 4]]</p></li></ol></li></ol></blockquote></li><li><p><code>np.array_split(a, num_folds)</code>：平分数组a</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">np.hstack((a, b)) <span class="comment">#水平堆叠</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">np.vstack((a, b)) <span class="comment">#垂直堆叠</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], </span><br><span class="line">     [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]</span><br></pre></td></tr></table></figure></li><li><p><code>np.dot(a, b)</code> 矩阵相乘 <code>np.multiply(a, b)</code>矩阵元素相乘。</p></li><li><p>求精度可用<code>np.mean(a = b)</code>, <code>np.mean(y_train == y_train_pred)</code>。</p></li><li><p><code>np.random.seed(n)</code>：接下来n次随机生成的数（组）都相同。</p></li><li><p><code>np.random.rand(d0, d1)</code> ：随机生成0到1之间的任意一数， d0和d1是维度。</p></li><li><p><code>np.random.randn(d0, d1)</code>：生成的数组服从正态分布</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], </span><br><span class="line">     [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">a + b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">2</span>, <span class="number">4</span>], </span><br><span class="line">     [<span class="number">4</span>, <span class="number">6</span>]]</span><br><span class="line"><span class="comment">#numpy的broadcast机制</span></span><br></pre></td></tr></table></figure></li><li><p><code>np.maximum(x, y)</code> or <code>np.maximum(a, 0)</code>：x，y逐位比较取较大者</p><p>=&gt;[0, 0, 1, 2, 0]</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>第一次写博客，把这两天新学的tricks记录下来，以便翻阅查找。</p><p>python 的一些技巧：</p><ul><li><p><code>del a, b</code>：删除某个变量名的内存空间，防止内存错误。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">del</span> a, b</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line"> <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li><li><p><code>plt.plot(x, y, &#39;-o&#39;)</code> </p></li><li><p><code>plt.subplot(x, y, i)</code>：x长，y宽，i第几幅画，从1开始数。</p></li><li><p>lambda 表达式，匿名函数</p><blockquote><p>add = lambda x, y: x + y</p><p>add(1, 2) =&gt; 3</p></blockquote></li><li></li></ul><p>numpy 里面的一些函数：</p><ul><li><p><code>axis = 0</code>：以列为计算对象；<code>axis = 1</code>：以行为计算对象（这点和平时用法相反）。</p><blockquote><p>axis = 0 对横轴进行操作，在运算过程中其运算方向表现为纵向运算</p><p>axis = 1 对纵轴进行操作，在运算过程中其运算方向表现为横向运算</p></blockquote></li><li><p>numpy数组里面的()和[]不要搞混了，取索引是[i, j]</p></li><li><p><code>sum(matrix, axis = 1)</code>，对每行进行相加，得到一个向量，默认返回行向量。</p></li><li><p><code>np.linalg.norm(x, ord = None, ...)</code>，求向量x的范数（是一个标量）。</p><blockquote><p>ord参数的用法：</p><p>默认ord = 2，L2范数<br>$$<br>\sqrt{\sum_i x_i ^ 2}<br>$$<br>​        ord = 1，L1范数<br>$$<br>\sum_i{|x_i|}<br>$$<br>​        ord = np.inf，L无穷范数<br>$$<br>\max(|x_i|)<br>$$</p></blockquote></li><li><p><code>np.flatnonzero(y_train == y)</code>：输出y_train == y时的索引数组（默认为非零元素的索引数组）。</p></li><li><p><code>np.random.choice(idx, sample_per_class, replace = False, ...)</code>：从idx中随机选取sample_per_class个，无放回；<code>replace = True</code> 有放回。</p></li><li></li><li><p><code>a = np.reshape(a, (2, -1))</code>： -1的意思是自动计算相应维度。</p></li><li><p><code>np.diag(x)</code>：</p><blockquote><ol><li>x 是矩阵，返回对角元素向量。</li><li>x 是向量，返回对角阵。</li></ol></blockquote></li><li><p><code>np.repeat(a, reqeats, axis = None)</code></p><blockquote><ol><li><p><code>axis = None</code> 每个元素复制repeats次，返回行向量。[1, 1, 2, 2, ……]</p><ol start="2"><li><p><code>axis = 0</code>  沿y轴复制 [[1, 2], </p><p>​                    [1, 2],</p><p>​                    [3, 4],</p><p>​                    [3, 4]]</p><ol start="3"><li><p><code>axis = 1</code> 沿x轴复制 [[1, 1, 2, 2], </p><pre><code>[3, 3, 4, 4]]</code></pre></li></ol></li></ol></li></ol></blockquote></li><li><p><code>np.array_split(a, num_folds)</code>：平分数组a</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a, b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">np.hstack((a, b)) <span class="comment">#水平堆叠</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">np.vstack((a, b)) <span class="comment">#垂直堆叠</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], </span><br><span class="line">     [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]</span><br></pre></td></tr></table></figure></li><li><p><code>np.dot(a, b)</code> 矩阵相乘 <code>np.multiply(a, b)</code>矩阵元素相乘。</p></li><li><p>求精度可用<code>np.mean(a = b)</code>, <code>np.mean(y_train == y_train_pred)</code>。</p></li><li><p><code>np.random.seed(n)</code>：接下来n次随机生成的数（组）都相同。</p></li><li><p><code>np.random.rand(d0, d1)</code> ：随机生成0到1之间的任意一数， d0和d1是维度。</p></li><li><p><code>np.random.randn(d0, d1)</code>：生成的数组服从正态分布</p></li><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], </span><br><span class="line">     [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">a + b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">2</span>, <span class="number">4</span>], </span><br><span class="line">     [<span class="number">4</span>, <span class="number">6</span>]]</span><br><span class="line"><span class="comment">#numpy的broadcast机制</span></span><br></pre></td></tr></table></figure></li><li><p><code>np.maximum(x, y)</code> or <code>np.maximum(a, 0)</code>：x，y逐位比较取较大者</p><p>=&gt;[0, 0, 1, 2, 0]</p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> 随笔 </category>
+          <category> tricks </category>
           
       </categories>
       
@@ -50,7 +100,7 @@
             
             <tag> numpy </tag>
             
-            <tag> 随笔 </tag>
+            <tag> tricks </tag>
             
         </tags>
       
