@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>opendata-platform-research</title>
+      <link href="/2018/10/05/opendata-platform-research/"/>
+      <url>/2018/10/05/opendata-platform-research/</url>
+      
+        <content type="html"><![CDATA[<p>####开源框架</p><ul><li>dataverse</li></ul><ul><li><p>[北大开放研究数据平台]:<a href="http://opendata.pku.edu.cn" target="_blank" rel="noopener">http://opendata.pku.edu.cn</a></p></li><li><p>[复旦大学社会科学数据平台]: <a href="https://dvn.fudan.edu.cn/home/" target="_blank" rel="noopener">https://dvn.fudan.edu.cn/home/</a></p></li></ul><ul><li><p>zenodo</p></li><li><p>ckan</p></li></ul><p>####现成网站</p><ul><li>figshare</li><li></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> opendata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> opendata </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>数据存储系统与技术 课堂笔记1</title>
       <link href="/2018/09/30/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
       <url>/2018/09/30/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF/</url>
