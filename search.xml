@@ -3,11 +3,36 @@
   
     
     <entry>
+      <title>区分充分和必要（条件）</title>
+      <link href="/2018/10/06/%E5%8C%BA%E5%88%86%E5%85%85%E5%88%86%E5%92%8C%E5%BF%85%E8%A6%81%EF%BC%88%E6%9D%A1%E4%BB%B6%EF%BC%89/"/>
+      <url>/2018/10/06/%E5%8C%BA%E5%88%86%E5%85%85%E5%88%86%E5%92%8C%E5%BF%85%E8%A6%81%EF%BC%88%E6%9D%A1%E4%BB%B6%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>1）命题是由条件和结论组成的（若。。成立，则。。成立）</p><p>2）必要性和充分性是描述命题的<br>    证必要性即证条件能推出结论（不要问为什么仅是规定而已，就如同规定苹果叫苹果一样）<br>    证充分性即证明结论能推出条件</p><p>3）充分条件、必要条件是描述条件的，（即命题中这个条件叫个神马条件？是谁的条件？）<br>     假如命题A为条件，B为结论<br>    若发生A推出B，则称A这个条件叫充分条件，是B的充分条件<br>    若发生结论推出条件，则称A为必要条件，是结论B的必要条件</p><p>转载自：<a href="https://www.cnblogs.com/hu-yewen/p/6670615.html" target="_blank" rel="noopener">https://www.cnblogs.com/hu-yewen/p/6670615.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> math </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 转载 </tag>
+            
+            <tag> math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>opendata-platform-research</title>
       <link href="/2018/10/05/opendata-platform-research/"/>
       <url>/2018/10/05/opendata-platform-research/</url>
       
-        <content type="html"><![CDATA[<p>###开源框架</p><ul><li>dataverse</li></ul><ul><li><p>[北大开放研究数据平台]:<a href="http://opendata.pku.edu.cn" target="_blank" rel="noopener">http://opendata.pku.edu.cn</a></p></li><li><p>[复旦大学社会科学数据平台]: <a href="https://dvn.fudan.edu.cn/home/" target="_blank" rel="noopener">https://dvn.fudan.edu.cn/home/</a></p></li></ul><ul><li><p>zenodo</p></li><li><p>ckan</p></li></ul><p>###现成网站</p><ul><li>figshare</li><li></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>###开源框架</p><ul><li><p>dataverse</p><blockquote><p>北大开放研究数据平台 <a href="http://opendata.pku.edu.cn" target="_blank" rel="noopener">http://opendata.pku.edu.cn</a></p><p>复旦大学社会科学数据平台  <a href="https://dvn.fudan.edu.cn/home/" target="_blank" rel="noopener">https://dvn.fudan.edu.cn/home/</a></p></blockquote></li><li><p>zenodo</p></li><li><p>nesstar</p></li><li><p>ckan</p></li><li><p>Dspace</p><blockquote><p> 武汉大学社会科学数据管理平台</p></blockquote></li><li><p>Fedora（Flexible Extensible Digital Object and repository Architecture 开源内容管理项目）</p></li></ul><p>###现成网站</p><ul><li>figshare</li></ul><h3 id="参考项目"><a href="#参考项目" class="headerlink" title="参考项目"></a>参考项目</h3><ul><li><p>牛津大学嵌入式机构数据管理服务（EIDCSR）</p></li><li><p>康奈尔大学DataStaR平台</p><blockquote><p>以上两个都是嵌入式科学数据管理平台</p><p>以上两个基于Fedora</p></blockquote></li><li><p>普渡大学机构数据仓储平台（PURR）</p><blockquote><p>基于HUBzero</p></blockquote></li><li><p>英国数据档案存档库（UKDA）</p><blockquote><p>基于Nesstar</p></blockquote></li></ul><ul><li><p>美国校际社会科学数据共享联盟（ICPSR）</p><blockquote><p>全球最大的社会科学数据平台</p><p>基于SDA</p></blockquote><hr></li><li><p>北京大学开放研究数据平台</p></li><li><p>复旦大学社会科学数据管理平台</p><blockquote><p>以上两个基于Dataverse</p></blockquote></li><li><p>武汉大学社会科学数据管理平台</p><blockquote><p>基于Dspace</p></blockquote></li><li><p>中科院科学数据管理平台、科学数据共享平台</p></li><li><p>中国国家调查数据库</p></li></ul><h3 id="附表"><a href="#附表" class="headerlink" title="附表"></a>附表</h3><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538746518466.png" alt="1538746518466"></p><p><img src="C:\Users\sayhi\Pictures\微信图片_20181005221156.png" alt="微信图片_20181005221156"></p><p><img src="C:\Users\sayhi\Pictures\微信截图_20181005221245.png" alt="微信截图_20181005221245"></p><h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><ul><li><p><strong>Dataverse较为成熟，国内已有两所高校采用，功能较为丰富，可行性高。</strong></p><blockquote><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538749991149.png" alt="1538749991149"></p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538750084132.png" alt="1538750084132"></p></blockquote></li><li><p><strong>Zenodo相对dataverse更加轻量化。</strong></p><blockquote><p><a href="https://zenodo.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://zenodo.readthedocs.io/en/latest/</a></p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538749888021.png" alt="1538749888021"></p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538749917876.png" alt="1538749917876"></p></blockquote></li><li><p><strong>Nesstar比较老（2016年更新到version4.0），不过做的还不错，可以尝试使用。</strong></p><blockquote><p><a href="http://nesstar.com/help/4.0/server/Configuration_Administration/user-management.html" target="_blank" rel="noopener">http://nesstar.com/help/4.0/server/Configuration_Administration/user-management.html</a><br><img src="C:\Users\sayhi\AppData\Local\Temp\1538748518530.png" alt="1538748518530"></p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1538748539984.png" alt="1538748539984"></p></blockquote></li></ul>]]></content>
       
       
       <categories>
