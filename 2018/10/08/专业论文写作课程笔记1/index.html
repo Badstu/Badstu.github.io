@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>'专业论文写作课堂笔记1' | sayhi's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">'专业论文写作课堂笔记1'</h1><a id="logo" href="/.">sayhi's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">'专业论文写作课堂笔记1'</h1><div class="post-meta">Oct 8, 2018<span> | </span><span class="category"><a href="/categories/课堂笔记/">课堂笔记</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/10/08/专业论文写作课程笔记1/" href="/2018/10/08/专业论文写作课程笔记1/#disqus_thread"></a><div class="post-content"><p>时间：10月8日周一</p>
+<p><em>课前参考阅读：</em></p>
+<blockquote>
+<p>Two papers on clustering</p>
+<ul>
+<li><p>BIRCH: An Efficient Data Clustering Method for Very Large Databases.</p>
+<p>SIGMOD Conference 1996: 103-114</p>
+</li>
+<li><p>CURE: An Efficient Clustering Algorithm for Large Databases.</p>
+<p>SIGMOD Conference 1998: 73-84</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>写论文时，不是从头写到尾，先挑重要部分开始写</strong></p>
+<p>###Structures</p>
+<ul>
+<li>Abstract</li>
+<li>Introduction</li>
+<li>Preliminaries（背景/前置知识）</li>
+<li>Main part（你的贡献）</li>
+<li>Conclusions(and discussion)</li>
+<li>References</li>
+</ul>
+<blockquote>
+<p>整篇论文最重要的地方是<strong>Abstract</strong>、<strong>Introduction</strong>和<strong>Conclusion</strong>，决定了是否被录用</p>
+<p>区别：</p>
+<p>​    <strong>Abstract 骗人看，Introduction和Conclusions骗人Accept。——李开复</strong></p>
+<ul>
+<li><p>Abstract夸自己的文章有多好，200-300个英语单词， 包含Attribution。</p>
+</li>
+<li><p>Introduction 是整片文章的缩写， 包含1. 大背景，小背景， 假设，范畴。2. 问题是什么，问题维度，难在哪里，问题价值。3. 基本思路，概述。4. 贡献点， Attribution。 5.接下来的文章组织。</p>
+<ul>
+<li>一般不去质疑作者假设和范围</li>
+<li>不能让读文章的人总结出难在哪里，写文章的人要自己提炼</li>
+<li>一般来说贡献点有三到五个之间</li>
+<li>假设别人是小白，一点不懂，逻辑上要很顺，把读者引进文章。</li>
+</ul>
+</li>
+<li>Conclusions可以提取得的成绩，用数据， 分析性的东西， 我取得这个成绩主要归功于我用了哪些方法， 拔高， future work。<ul>
+<li>假设别人至少已经读过Introduction</li>
+<li>discussion，换一个场景，别人还可以做什么future work</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="具体论文阅读"><a href="#具体论文阅读" class="headerlink" title="具体论文阅读"></a>具体论文阅读</h3><p>####BIRCH</p>
+<ul>
+<li>文章题目规范要求<ul>
+<li>专有名词缩写全部大写</li>
+<li>实词（名词动词形容词副词）首字母大写</li>
+<li>介词全部小写</li>
+<li>冠词在句首首字母大写（冒号后等于另起一行）An、The、A</li>
+<li><strong>文章若有低级错误（语法，大小写，拼写）， 会被评审人直接否决</strong></li>
+</ul>
+</li>
+<li>作者，单位，email</li>
+<li>Abstract<ul>
+<li>一般会议和期刊论文不分段</li>
+<li>大背景—&gt;小背景—&gt;快速缩到自己要做的内容</li>
+<li>我提出的东西很好很好</li>
+<li>如果语法很好，特别有信心，可以写长难句，逗号前后主语一致等等，如果语法不好，最好写简单句。一篇文章可以有几句长难句，大部分都是简单句</li>
+<li>一页尽量控制只有一个语法错误，不要出错在关键句子</li>
+</ul>
+</li>
+<li>Preliminaries（前导知识）<ul>
+<li>Problem statement/description/definition</li>
+<li>Related work</li>
+</ul>
+</li>
+</ul>
+<h3 id="英文搭配"><a href="#英文搭配" class="headerlink" title="英文搭配"></a>英文搭配</h3><ol>
+<li>address the problem</li>
+<li>this paper <strong>presents</strong>（提出）a data clustering method named BIRCH</li>
+<li>and <strong>demonstrates</strong> that it is espacially suitable for large databases</li>
+<li>large database <strong>and</strong>（递进） minimization of IO costs</li>
+</ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
+<li>看五六篇论文</li>
+<li>看算法<ol>
+<li>b-tree</li>
+<li>插入排序/快速排序/冒泡排序</li>
+<li>图算法（最短路径）</li>
+</ol>
+</li>
+<li>如果要写论文，讲这些算法，你会怎么写，能不能更精炼。</li>
+</ol>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/08/专业论文写作课程笔记1/" data-id="cjmzmikwn00077suunfu2acoe" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3a0U4rMQwEUP7/p0HiCalq74ydQK909qkq0M0J0jod++Mjvj6/r5+vH995/OnP9x8/7dnvtJ924MLDw8MbLf3Zld8yWUQOTjb09V/h4eHh3eYlxWC2Ha/xbXnI14yHh4f3DrzNbRL8azYeHh7e/8hLDrgzZBtb4OHh4b0DL48D8gCi3bjNeg5kLXh4eHgxb9YA+9vX1/t7eHh4eKOuehvU5iHsLHSo14mHh4d3gZe3/JNn7yx0mAW4RcHAw8PDu8Dbt6BmYcGswZZED1FWjYeHhzfiJTfIG1p54Ds7cOf4YvYBDw8Pb8RrW1CbGGIWeby+e9TZw8PDw/tFXrvQpMzsj+BRMIGHh4d3gZc/1vMDd350LpKS0dMeDw8P7wYvj2XzuaZZ/Noe2SMkHh4e3jVe0vhvI4kcOSs2RZXDw8PDO8rLH+6z+GAznjVD/iPMxcPDwzvKawdD2zbY5uA+i4Dx8PDw7vHa8DRvd70uA6cO0NGm4+Hh4R3i5aFqy5t9cr4R0fbh4eHhXea1YUR+LM5LSE6NWmh4eHh4F3j5l/yz4wL5diTfCaKAAw8PD+8oL39Az0LVvBmWtMHakoOHh4d3m7dv+beLbqekVoUBDw8Pb83LhwPagae8JJw6QD/9v+Hh4eEd5eUP+jZ0yBta++ZZEePi4eHhHeXdGCZog4z8eN0e0/Hw8PDO8vKhgdlgQZ6L5IWhaLDh4eHh/Tqvbfa3i9g/+qOUGg8PD+8Q77O86kmuUXixeb/IOfDw8PBGvDakaJe4v33eYGujEDw8PLwNbxbL5mUg37J2Q+v5CDw8PLyjvNmc0r5VdqqQRONWeHh4eH/Ey6PbZBQgHyBo5wHw8PDw3oGXRKibB3peiopCgoeHh3eNt2lKtUWl3b62SODh4eHd5m2+6rcLardvFuni4eHhXeN9AfkfX/S7wZR2AAAAAElFTkSuQmCC">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/06/区分充分和必要（条件）/">区分充分和必要（条件）</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://yoursite.com/2018/10/08/专业论文写作课程笔记1/';
+    this.page.identifier = '2018/10/08/专业论文写作课程笔记1/';
+    this.page.title = ''专业论文写作课堂笔记1'';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//sayhi.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//sayhi.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://sayhi.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/numpy/">numpy</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/opendata/">opendata</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tricks/">tricks</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/课堂笔记/">课堂笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/tricks/" style="font-size: 15px;">tricks</a> <a href="/tags/技术/" style="font-size: 15px;">技术</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/课堂笔记/" style="font-size: 15px;">课堂笔记</a> <a href="/tags/opendata/" style="font-size: 15px;">opendata</a> <a href="/tags/numpy/" style="font-size: 15px;">numpy</a> <a href="/tags/pandas/" style="font-size: 15px;">pandas</a> <a href="/tags/转载/" style="font-size: 15px;">转载</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/python/" style="font-size: 15px;">python</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/08/专业论文写作课程笔记1/">'专业论文写作课堂笔记1'</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/06/区分充分和必要（条件）/">区分充分和必要（条件）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/05/opendata-platform-research/">opendata-platform-research</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/30/数据存储系统与技术/">数据存储系统与技术 课堂笔记1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/28/tricks/">pandas的一些tricks</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/20/Numpy中怎么得到向量中出现次数最多的元素值？/">Numpy中怎么得到向量中出现次数最多的元素值？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/python numpy 的一些tricks/">python numpy的一些tricks</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/my-first-blog/">'my-first-blog'</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//sayhi.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">sayhi's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
