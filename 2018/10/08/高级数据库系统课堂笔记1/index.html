@@ -1,7 +1,5 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>高级数据库系统课堂笔记1 | sayhi's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">高级数据库系统课堂笔记1</h1><a id="logo" href="/.">sayhi's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">高级数据库系统课堂笔记1</h1><div class="post-meta">Oct 8, 2018<span> | </span><span class="category"><a href="/categories/课堂笔记/">课堂笔记</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/10/08/高级数据库系统课堂笔记1/" href="/2018/10/08/高级数据库系统课堂笔记1/#disqus_thread"></a><div class="post-content"><p>时间：10月8日周一晚 第二次课</p>
-<p>##关系数据库的功能性</p>
-<p>###系统的要素</p>
-<ul>
+<h2 id="关系数据库的功能性"><a href="#关系数据库的功能性" class="headerlink" title="关系数据库的功能性"></a>关系数据库的功能性</h2><h3 id="系统的要素"><a href="#系统的要素" class="headerlink" title="系统的要素"></a>系统的要素</h3><ul>
 <li><strong>功能</strong></li>
 <li>性能</li>
 <li>易用性</li>
@@ -9,8 +7,7 @@
 <blockquote>
 <p>折中， 牺牲功能换性能</p>
 </blockquote>
-<p>###数据模型</p>
-<ul>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><ul>
 <li>如何描述信息？</li>
 <li>考虑数据模型<ul>
 <li>key-value</li>
@@ -41,8 +38,7 @@
 <li>设计关系模式（schema）</li>
 <li>用SQL语言描述信息需求</li>
 </ul>
-<p>###关系模式的设计</p>
-<p>图片</p>
+<h3 id="关系模式的设计"><a href="#关系模式的设计" class="headerlink" title="关系模式的设计"></a>关系模式的设计</h3><p>图片</p>
 <ul>
 <li>差的数据模式带来的问题<ul>
 <li>数据冗余</li>
@@ -96,8 +92,7 @@
 </li>
 </ul>
 <p><em>如何设计出好的数据模式</em></p>
-<p>###数据库设计流程</p>
-<ul>
+<h3 id="数据库设计流程"><a href="#数据库设计流程" class="headerlink" title="数据库设计流程"></a>数据库设计流程</h3><ul>
 <li>需求分析</li>
 <li>概念模型设计 </li>
 <li>逻辑结构模型</li>
@@ -109,13 +104,12 @@
 <li>R: Relationship（联系）</li>
 <li><img src="C:\Users\sayhi\Pictures\微信图片_20181008214012.jpg" alt="微信图片_20181008214012"></li>
 </ul>
-<p>###总结</p>
-<ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
 <li>关系模型的设计</li>
 <li>范式能够节约空间，但是对性能不友好（历史问题，储存贵，用速度换存储）</li>
 <li>key-value虽然会产生冗余，可以提高性能</li>
 </ul>
-<h2 id="关系数据库的调优"><a href="#关系数据库的调优" class="headerlink" title="关系数据库的调优"></a>关系数据库的调优</h2><h3 id="系统的要素"><a href="#系统的要素" class="headerlink" title="系统的要素"></a>系统的要素</h3><ul>
+<h2 id="关系数据库的调优"><a href="#关系数据库的调优" class="headerlink" title="关系数据库的调优"></a>关系数据库的调优</h2><h3 id="系统的要素-1"><a href="#系统的要素-1" class="headerlink" title="系统的要素"></a>系统的要素</h3><ul>
 <li>功能</li>
 <li><strong>性能</strong></li>
 <li>易用性</li>
