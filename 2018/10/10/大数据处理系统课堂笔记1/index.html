@@ -45,6 +45,23 @@
 <li>某些map提前做完之后，就通过shuffle推送到reduce所在结点上，可以减缓网络通道的拥塞</li>
 <li>通过schedule保持正确性</li>
 </ul>
+<h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><ul>
+<li><p>HIVE（使用SQL进行查询）</p>
+</li>
+<li><p>mapreduce通过硬盘读写，不能完成高效处理，比较适合批量处理</p>
+<p>一个map启动可能就要一两分钟</p>
+</li>
+<li><p>Originally developed in 2009 in UC Berkeley’s AMP Lab</p>
+</li>
+<li><p><code>less code</code> <code>easy to develope</code> <code>faster to run</code></p>
+</li>
+<li><p><code>Spark SQL</code> <code>Spark Streaming</code> <code>MLlib</code> <code>GraphX</code> </p>
+</li>
+</ul>
+<h3 id="Spark-Execution-Engine"><a href="#Spark-Execution-Engine" class="headerlink" title="Spark Execution Engine"></a>Spark Execution Engine</h3><ul>
+<li>Use <strong>In Memory and Pipelining</strong> to Achieve Performance over Mapreduce</li>
+<li>In Memory RDD(Resilient Distributed Dataset) 弹性分布式数据集</li>
+</ul>
 </div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/10/大数据处理系统课堂笔记1/" data-id="cjn2hslc80007vkuutmkwf4l7" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACw0lEQVR42u3a0U7kMAwF0Pn/n2YlnlgN7dzrJANCp08j6DQ5RYqN7ccjvj4+r+fPz/d8vZ5/nnzr/s7HiQsPDw9vtPX7Za4WvronuTPZT/KTF68GDw8P7xgvCQYJJn8FK08uggceHh7ej/Luj+/ku7O0Gw8PD+9v89og0dYT8PDw8H4PLylGJI9LQkIeJPIAs6HWgoeHhxfzVhpgP/X5Tf09PDw8vLKrnh+47SG+PpQQ7RYPDw/vAK9tZc1GoO5hbcOsXQUPDw9vLy85stvw0D45DwlJwPjvaXh4eHjHePnRvzI+1QaVNlB98y08PDy8Y7zhsRtvIl9lfZThMu7h4eHhbeK1zaf1dn4ebJJUPkr38fDw8LbykmQ3GYpqwfmYQlsUxsPDw3s/L/ntrPw6a4C1fww8PDy89/DaJDjP1tsRq1nJ40UZAg8PD+8AbyWRbc/h9dGBIkHHw8PDO8BLUtt8OOA+tLQp9ayI/CL64eHh4W3irQ88zdr/ybW514eHh4e3zGsT37zY2gaJPFQUAQMPDw/vAG8lMW0HqmYljDbKffMtPDw8vAO8tpG//jrqUmxZqsDDw8M7x2uT19nQQA5ox7BeJPp4eHh4x3jrQwMrAaANM3majoeHh3eOlzw6CRKzYNMOH9QjAnh4eHhbeUnRIR+KyisfSShaaa1d1lrw8PDwlnnJRtumVxtOZmEmYuPh4eEd5s2WTwoWbTEiX/FFOMHDw8M7wMuXmf2P376a2TBBhMTDw8PbxPsor+TQb1PkXYk4Hh4e3nt4G+LJqNDQ3tO26PDw8PBO89qF10cQ8gJu0cGbJdZ4eHh4C7x807Nmf5KIr6fg9ebw8PDwDvNm22rbZnnuHxVN8PDw8H4Zr02sZ+MFyX4ud4iHh4d3jNcWWGcttLzosFKAwMPDwzvNmzXAdiXN7ahBDsbDw8M7wPsHh7oNARDCba0AAAAASUVORK5CYII=">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/08/高级数据库系统课堂笔记1/">高级数据库系统课堂笔记1</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
     this.page.url = 'http://yoursite.com/2018/10/10/大数据处理系统课堂笔记1/';
     this.page.identifier = '2018/10/10/大数据处理系统课堂笔记1/';
