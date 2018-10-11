@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>数据科学数学基础课堂笔记1</title>
+      <link href="/2018/10/11/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B01/"/>
+      <url>/2018/10/11/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B01/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月11日下午 周四</p><h3 id="线性空间与子空间"><a href="#线性空间与子空间" class="headerlink" title="线性空间与子空间"></a>线性空间与子空间</h3><ul><li><p>引进维数度量空间大小</p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539235109044.png" alt="1539235109044"></p></li><li><p>引进基底表示空间内元素的关系</p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539235219907.png" alt="1539235219907"></p><blockquote><p>任何一个元素都可以用基底线性表出</p></blockquote></li><li><p>引入坐标表示向量的与基关系</p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539235443267.png" alt="1539235443267"></p></li><li><p>两组基由过渡矩阵来连接</p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539235583380.png" alt="1539235583380"></p><blockquote><p>过渡矩阵一定可逆</p></blockquote></li></ul><h4 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h4><ul><li><p>线性映射</p><blockquote><p>f(x + y) = f(x) + f(y) 叠加性</p><p>f(a<em>x) = a </em> f(x) 齐次性</p></blockquote><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539236671646.png" alt="1539236671646"></p><p>不同空间的变换， 同一空间变换叫做线性变换</p></li><li><p>线性变换</p><p><img src="C:\Users\sayhi\AppData\Local\Temp\1539236820282.png" alt="1539236820282"></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>大数据处理系统课堂笔记1</title>
       <link href="/2018/10/10/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B01/"/>
       <url>/2018/10/10/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B01/</url>
@@ -163,9 +186,9 @@
       
         <tags>
             
-            <tag> tricks </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> tricks </tag>
             
             <tag> pandas </tag>
             
@@ -192,9 +215,9 @@
             
             <tag> 技术 </tag>
             
-            <tag> numpy </tag>
-            
             <tag> python </tag>
+            
+            <tag> numpy </tag>
             
         </tags>
       
@@ -217,11 +240,11 @@
       
         <tags>
             
-            <tag> tricks </tag>
-            
             <tag> 技术 </tag>
             
             <tag> numpy </tag>
+            
+            <tag> tricks </tag>
             
         </tags>
       
