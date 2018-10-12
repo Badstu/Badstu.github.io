@@ -77,7 +77,34 @@
 </ul>
 </li>
 </ul>
-<h3 id="RAID级别——RAID2"><a href="#RAID级别——RAID2" class="headerlink" title="RAID级别——RAID2"></a>RAID级别——RAID2</h3><h3 id="RAID级别——RAID3"><a href="#RAID级别——RAID3" class="headerlink" title="RAID级别——RAID3"></a>RAID级别——RAID3</h3></div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/" data-id="cjn5k1azu000lkouujq1xpw7l" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WrjQAwF0Pz/T7ewT4U09r2amTQLZ55CiO05DliypMcjXl//1vPnV7/8uV4d9eqb56Oev9+88PDw8EZbf7WuecmFE1iOzPeMh4eHd5qXB4PkgT4LMwkp3zMeHh7eJ/CuH/GzVLsND3h4eHj/F2+26RxzfVvx8PDwPo2XFCOSl/+8CNuGh+O1Fjw8PLyYt7d88J7Pb+rv4eHh4ZVd9WSdKzS0weCXo/Dw8PAO8E60r1ZKCcl+2rPh4eHhneAlm0se3+1AwN5jb8B4eHh4W3mzQkBeQs3bY/lVisEvPDw8vK28PCGejVi1Ywd5KBr+b3h4eHibeG2zP3mU7xoFuD7zzTd4eHh4x3izgdF2u7MxhTxB/2X/eHh4eG/n5WnxegCYjR3chC48PDy8Y7xdl1/pv7WDAlHajYeHh3eAl5dKk0JtzshLwC0JDw8P7zQv+el6K2sWKmbFiJdvDHh4eHibeG17aaV0244dtC2xm5CDh4eH90be8EFcnj8PALOyMh4eHt4uXpvgrmD2FmeLNwY8PDy8rby9QwO7blObjt8k1nh4eHhbeXnxNG+AXRcU8u0m+JvQgoeHh3eA16a5eWFiV3hYT9/x8PDwzvHa1lc+NJBvd6XpVQwi4OHh4S3zkkuu34i95ywKwXh4eHgHeO0oQDta2oaQlQLuI485eHh4eAu89cHTvanzrCh8E/fw8PDwDvDaSNIGktmowSwIFR0zPDw8vJL3Va6k2d8m5S0+DyR4eHh4J3jr3fZdiXV+IzbUXfDw8PCWeW0wSBLfWWmjbYDVtRY8PDy8rbz2obwrwW1bYnWYwcPDw/sA3vqgwHqJtrgpeHh4eH/Ky5PdlSJsG4qiNhgeHh7eAd5sc3kTa9ZsW7k6Hh4e3jlem9TOyqyzsYA2gR4i8fDw8FLeN5k2c6iS0KrXAAAAAElFTkSuQmCC">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/11/不完全成片展示/">不完全成片展示</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+<h3 id="RAID级别——RAID2"><a href="#RAID级别——RAID2" class="headerlink" title="RAID级别——RAID2"></a>RAID级别——RAID2</h3><ul>
+<li>采用海明码校验组成硬盘阵列</li>
+<li>2的n次幂为校验盘</li>
+<li>RAID2的硬盘利用率很低，基本不再使用</li>
+</ul>
+<h3 id="RAID级别——RAID3"><a href="#RAID级别——RAID3" class="headerlink" title="RAID级别——RAID3"></a>RAID级别——RAID3</h3><ul>
+<li>有校验的并行数据传输，数据条带化分布在数据盘中，同时使用专用校验硬盘存放校验数据</li>
+<li>最小硬盘数：3</li>
+</ul>
+<h3 id="RAID级别——RAID4"><a href="#RAID级别——RAID4" class="headerlink" title="RAID级别——RAID4"></a>RAID级别——RAID4</h3><ul>
+<li>独立的数据硬盘和共享的校验硬盘</li>
+<li>RAID3每次访问一个条带，RAID4每次访问一个盘</li>
+<li>RAID4的读写性能较差，很少使用</li>
+</ul>
+<h3 id="RAID级别——RAID5"><a href="#RAID级别——RAID5" class="headerlink" title="RAID级别——RAID5"></a>RAID级别——RAID5</h3><ul>
+<li>与RAID3类似，但是校验数据均匀分布在各数据硬盘上，RAID成员盘上同时保存数据和校验星系，数据块和对应的校验信息保存在不同的硬盘上，RAID5是最常用的RAID方式之一</li>
+<li>最常使用</li>
+<li>校验比较简单，做异或运算</li>
+<li>最小硬盘数：3</li>
+</ul>
+<blockquote>
+<p>常用的0 1 3 5</p>
+</blockquote>
+<h3 id="RAID硬盘失效处理"><a href="#RAID硬盘失效处理" class="headerlink" title="RAID硬盘失效处理"></a>RAID硬盘失效处理</h3><ul>
+<li>热备</li>
+<li>热插拔</li>
+</ul>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/" data-id="cjn5k1azu000lkouujq1xpw7l" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WrjQAwF0Pz/T7ewT4U09r2amTQLZ55CiO05DliypMcjXl//1vPnV7/8uV4d9eqb56Oev9+88PDw8EZbf7WuecmFE1iOzPeMh4eHd5qXB4PkgT4LMwkp3zMeHh7eJ/CuH/GzVLsND3h4eHj/F2+26RxzfVvx8PDwPo2XFCOSl/+8CNuGh+O1Fjw8PLyYt7d88J7Pb+rv4eHh4ZVd9WSdKzS0weCXo/Dw8PAO8E60r1ZKCcl+2rPh4eHhneAlm0se3+1AwN5jb8B4eHh4W3mzQkBeQs3bY/lVisEvPDw8vK28PCGejVi1Ywd5KBr+b3h4eHibeG2zP3mU7xoFuD7zzTd4eHh4x3izgdF2u7MxhTxB/2X/eHh4eG/n5WnxegCYjR3chC48PDy8Y7xdl1/pv7WDAlHajYeHh3eAl5dKk0JtzshLwC0JDw8P7zQv+el6K2sWKmbFiJdvDHh4eHibeG17aaV0244dtC2xm5CDh4eH90be8EFcnj8PALOyMh4eHt4uXpvgrmD2FmeLNwY8PDy8rby9QwO7blObjt8k1nh4eHhbeXnxNG+AXRcU8u0m+JvQgoeHh3eA16a5eWFiV3hYT9/x8PDwzvHa1lc+NJBvd6XpVQwi4OHh4S3zkkuu34i95ywKwXh4eHgHeO0oQDta2oaQlQLuI485eHh4eAu89cHTvanzrCh8E/fw8PDwDvDaSNIGktmowSwIFR0zPDw8vJL3Va6k2d8m5S0+DyR4eHh4J3jr3fZdiXV+IzbUXfDw8PCWeW0wSBLfWWmjbYDVtRY8PDy8rbz2obwrwW1bYnWYwcPDw/sA3vqgwHqJtrgpeHh4eH/Ky5PdlSJsG4qiNhgeHh7eAd5sc3kTa9ZsW7k6Hh4e3jlem9TOyqyzsYA2gR4i8fDw8FLeN5k2c6iS0KrXAAAAAElFTkSuQmCC">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/11/不完全成片展示/">不完全成片展示</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
     this.page.url = 'http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/';
     this.page.identifier = '2018/10/12/数据存储与技术课堂笔记2/';
     this.page.title = '数据存储与技术课堂笔记2';
