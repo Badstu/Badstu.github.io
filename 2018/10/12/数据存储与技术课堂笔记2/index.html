@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>数据存储与技术课堂笔记2 | sayhi's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">数据存储与技术课堂笔记2</h1><a id="logo" href="/.">sayhi's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">数据存储与技术课堂笔记2</h1><div class="post-meta">Oct 12, 2018<span> | </span><span class="category"><a href="/categories/课堂笔记/">课堂笔记</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/10/12/数据存储与技术课堂笔记2/" href="/2018/10/12/数据存储与技术课堂笔记2/#disqus_thread"></a><div class="post-content"><ul>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>数据存储与技术课堂笔记2 | sayhi's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">数据存储与技术课堂笔记2</h1><a id="logo" href="/.">sayhi's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">数据存储与技术课堂笔记2</h1><div class="post-meta">Oct 12, 2018<span> | </span><span class="category"><a href="/categories/课堂笔记/">课堂笔记</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/10/12/数据存储与技术课堂笔记2/" href="/2018/10/12/数据存储与技术课堂笔记2/#disqus_thread"></a><div class="post-content"><p>时间：10月12日下午 周五</p>
+<ul>
 <li>RAID（独立冗余磁盘阵列）<ul>
 <li>Redundant Arrays of Independent(Inexpensive) DIsks<ul>
 <li>A Case for Redundant Arrays of Inexpensive Disks(RAID)</li>
@@ -10,8 +11,73 @@
 <li>安全性：数据对企业和个人的重要性也越来越大，数据存储安全需要保障</li>
 </ul>
 </li>
+<li>RAID基本原理与特征<ul>
+<li>数据以条块化（stripe）分布于多个磁盘</li>
+<li>存储容量扩展，I/O性能提升</li>
+<li>冗余机制获得较高的数据可用性<ul>
+<li>可用性：即使某些部件故障扔能够为用户提供服务</li>
+<li>通过冗余信息实现数据恢复</li>
 </ul>
-</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/" data-id="cjn5k1azu000lkouujq1xpw7l" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WrjQAwF0Pz/T7ewT4U09r2amTQLZ55CiO05DliypMcjXl//1vPnV7/8uV4d9eqb56Oev9+88PDw8EZbf7WuecmFE1iOzPeMh4eHd5qXB4PkgT4LMwkp3zMeHh7eJ/CuH/GzVLsND3h4eHj/F2+26RxzfVvx8PDwPo2XFCOSl/+8CNuGh+O1Fjw8PLyYt7d88J7Pb+rv4eHh4ZVd9WSdKzS0weCXo/Dw8PAO8E60r1ZKCcl+2rPh4eHhneAlm0se3+1AwN5jb8B4eHh4W3mzQkBeQs3bY/lVisEvPDw8vK28PCGejVi1Ywd5KBr+b3h4eHibeG2zP3mU7xoFuD7zzTd4eHh4x3izgdF2u7MxhTxB/2X/eHh4eG/n5WnxegCYjR3chC48PDy8Y7xdl1/pv7WDAlHajYeHh3eAl5dKk0JtzshLwC0JDw8P7zQv+el6K2sWKmbFiJdvDHh4eHibeG17aaV0244dtC2xm5CDh4eH90be8EFcnj8PALOyMh4eHt4uXpvgrmD2FmeLNwY8PDy8rby9QwO7blObjt8k1nh4eHhbeXnxNG+AXRcU8u0m+JvQgoeHh3eA16a5eWFiV3hYT9/x8PDwzvHa1lc+NJBvd6XpVQwi4OHh4S3zkkuu34i95ywKwXh4eHgHeO0oQDta2oaQlQLuI485eHh4eAu89cHTvanzrCh8E/fw8PDwDvDaSNIGktmowSwIFR0zPDw8vJL3Va6k2d8m5S0+DyR4eHh4J3jr3fZdiXV+IzbUXfDw8PCWeW0wSBLfWWmjbYDVtRY8PDy8rbz2obwrwW1bYnWYwcPDw/sA3vqgwHqJtrgpeHh4eH/Ky5PdlSJsG4qiNhgeHh7eAd5sc3kTa9ZsW7k6Hh4e3jlem9TOyqyzsYA2gR4i8fDw8FLeN5k2c6iS0KrXAAAAAElFTkSuQmCC">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/11/不完全成片展示/">不完全成片展示</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+</li>
+<li>所引入的开销<ul>
+<li>容量开销：存储冗余信息</li>
+<li>带宽开销：冗余信息的读写</li>
+<li>计算资源开销：冗余信息的更新、恢复</li>
+</ul>
+</li>
+<li>收益和开销之间要做一个trade off</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>RAID技术将多个单独的物理硬盘以不同的方式组合成一个逻辑硬盘，从而提高了硬盘的读写性能和数据安全性。</p>
+</blockquote>
+<ul>
+<li>RAID基本原理——条带</li>
+<li>RAID基本原理——校验<ul>
+<li>P = A0 XOR A1</li>
+</ul>
+</li>
+<li>RAID基本原理——重建<ul>
+<li>减少冗余的磁盘空间</li>
+</ul>
+</li>
+<li>物理卷和逻辑卷<ul>
+<li>RAID由几个硬盘组成，从整体上看相当于一个物理卷</li>
+<li>在物理卷的基础上可以按照指定容量创建一个或多个逻辑卷，通过LUN（Logic Unit Number）来标识</li>
+</ul>
+</li>
+</ul>
+<h3 id="RAID级别——RAID0"><a href="#RAID级别——RAID0" class="headerlink" title="RAID级别——RAID0"></a>RAID级别——RAID0</h3><ul>
+<li>优点<ul>
+<li>极高的读写效率</li>
+<li>速度快，不存在校验</li>
+<li>部署简单</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>没有容错</li>
+<li>没有荣誉</li>
+<li>没有校验</li>
+</ul>
+</li>
+</ul>
+<h3 id="RAID级别——RAID1"><a href="#RAID级别——RAID1" class="headerlink" title="RAID级别——RAID1"></a>RAID级别——RAID1</h3><ul>
+<li>1:1的镜像拷贝</li>
+<li>优点<ul>
+<li>提供很高的数据安全性和可用性</li>
+<li>100%的数据冗余</li>
+<li>设计、使用简单</li>
+<li>不做校验计算，CPU占用资源小</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>空间利用率只有1/2</li>
+<li>相对于单个硬盘，无法提高写性能</li>
+</ul>
+</li>
+</ul>
+<h3 id="RAID级别——RAID2"><a href="#RAID级别——RAID2" class="headerlink" title="RAID级别——RAID2"></a>RAID级别——RAID2</h3><h3 id="RAID级别——RAID3"><a href="#RAID级别——RAID3" class="headerlink" title="RAID级别——RAID3"></a>RAID级别——RAID3</h3></div><iframe src="/donate/?AliPayQR=/img/AliPayQR.jpg&amp;WeChatQR=/img/WeChatQR.jpg&amp;GitHub=https://github.com/Kaiyuan/donate-page&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/" data-id="cjn5k1azu000lkouujq1xpw7l" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WrjQAwF0Pz/T7ewT4U09r2amTQLZ55CiO05DliypMcjXl//1vPnV7/8uV4d9eqb56Oev9+88PDw8EZbf7WuecmFE1iOzPeMh4eHd5qXB4PkgT4LMwkp3zMeHh7eJ/CuH/GzVLsND3h4eHj/F2+26RxzfVvx8PDwPo2XFCOSl/+8CNuGh+O1Fjw8PLyYt7d88J7Pb+rv4eHh4ZVd9WSdKzS0weCXo/Dw8PAO8E60r1ZKCcl+2rPh4eHhneAlm0se3+1AwN5jb8B4eHh4W3mzQkBeQs3bY/lVisEvPDw8vK28PCGejVi1Ywd5KBr+b3h4eHibeG2zP3mU7xoFuD7zzTd4eHh4x3izgdF2u7MxhTxB/2X/eHh4eG/n5WnxegCYjR3chC48PDy8Y7xdl1/pv7WDAlHajYeHh3eAl5dKk0JtzshLwC0JDw8P7zQv+el6K2sWKmbFiJdvDHh4eHibeG17aaV0244dtC2xm5CDh4eH90be8EFcnj8PALOyMh4eHt4uXpvgrmD2FmeLNwY8PDy8rby9QwO7blObjt8k1nh4eHhbeXnxNG+AXRcU8u0m+JvQgoeHh3eA16a5eWFiV3hYT9/x8PDwzvHa1lc+NJBvd6XpVQwi4OHh4S3zkkuu34i95ywKwXh4eHgHeO0oQDta2oaQlQLuI485eHh4eAu89cHTvanzrCh8E/fw8PDwDvDaSNIGktmowSwIFR0zPDw8vJL3Va6k2d8m5S0+DyR4eHh4J3jr3fZdiXV+IzbUXfDw8PCWeW0wSBLfWWmjbYDVtRY8PDy8rbz2obwrwW1bYnWYwcPDw/sA3vqgwHqJtrgpeHh4eH/Ky5PdlSJsG4qiNhgeHh7eAd5sc3kTa9ZsW7k6Hh4e3jlem9TOyqyzsYA2gR4i8fDw8FLeN5k2c6iS0KrXAAAAAElFTkSuQmCC">分享</a><div class="tags"><a href="/tags/课堂笔记/">课堂笔记</a></div><div class="post-nav"><a class="next" href="/2018/10/11/不完全成片展示/">不完全成片展示</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
     this.page.url = 'http://yoursite.com/2018/10/12/数据存储与技术课堂笔记2/';
     this.page.identifier = '2018/10/12/数据存储与技术课堂笔记2/';
     this.page.title = '数据存储与技术课堂笔记2';
