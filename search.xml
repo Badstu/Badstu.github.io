@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>科技论文写作课堂笔记2</title>
+      <link href="/2018/10/15/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/"/>
+      <url>/2018/10/15/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月15日上午  周一</p><blockquote><p>科研论文就是八股文，起承转合，论述等等，按照框架和体系书写，很容易与他人沟通</p></blockquote><h3 id="Main-part"><a href="#Main-part" class="headerlink" title="Main part"></a>Main part</h3><ul><li>Algorithm</li><li>System design</li><li>Enhancement/optimization</li><li>Analysis</li><li>Experiments</li></ul><blockquote><ul><li>举例子的作用是让别人理解你的算法</li><li>理论分析包括正确性分析、复杂度分析、最差情况分析和平均时间分析</li><li>真实数据的实验</li><li>算法介绍包含两个部分，静态部分：数据结构；动态部分：算法怎么运行</li></ul></blockquote><h3 id="More-papers"><a href="#More-papers" class="headerlink" title="More papers"></a>More papers</h3><ul><li>Access path selection in a relation database management system. SIGMOD, 1979.</li><li>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging. ACM Transaction on Database Systems, 1992.</li><li>The R*-Tree: An Efficient and Robust Access Method for points and Rectangles. SIGMOD Conference 1990.</li><li>Fast Algorithms for Mining Association Rules in Large Databases. VLDB 1994.</li></ul><blockquote><p>能用文字去表达的就用文字去表达，需要强调的地方用图，用表，用伪代码</p><p>用1/4页到半页之间讲清楚running example（同时涵盖很多例子）</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>数据存储与技术课堂笔记2</title>
       <link href="/2018/10/12/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/"/>
       <url>/2018/10/12/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/</url>
