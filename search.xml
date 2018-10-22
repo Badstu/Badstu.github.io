@@ -3,6 +3,100 @@
   
     
     <entry>
+      <title>科技论文写作课堂笔记3</title>
+      <link href="/2018/10/22/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B03/"/>
+      <url>/2018/10/22/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B03/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月22日 周一早上</p><p>算法介绍分两个部分</p><blockquote><ul><li>静态（数据结构）</li><li>动态（算法介绍）</li></ul></blockquote><p>数据结构</p><blockquote><p>数组</p><p>链表</p><p>树</p><ul><li>二叉树</li><li>多叉树（可以转换为二叉树）</li><li>（平衡）二叉搜索树</li><li>b-tree</li></ul><p>图</p><p>字符串</p><p>算法思想</p><p>算法分析</p></blockquote><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p><em>画图表示要注意三点</em></p><ul><li>只有当用图表示比用伪代码表示更精简才用画图表示</li><li>画图要规范，各种图例和用图规范</li><li>图里面和伪代码里面的字要比正文小一到两号</li></ul><blockquote><p>写英文论文用LaTex</p></blockquote><blockquote><p><em>布隆过滤器（Bloom Filter ）</em></p></blockquote><p><em>伪代码</em></p><ul><li>伪代码只要遵守自己的一套语法就行，无歧义即可</li><li>伪代码要保持一定的美感，缩进空两格就可以</li><li>伪代码前面标出行号</li><li>某些伪代码里面可以用自然语言表示要做的事情（或者加注释）</li><li>设计好算法，尽量减少算法缩进，极少有五层缩进，浪费空间</li></ul><blockquote><p>xxx.[空格]XXX</p></blockquote><p><em>流程图</em></p><p><em>多个不同操作</em></p><ul><li>一个数据结构对应着不同的操作（类比b-tree）</li></ul><h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h3 id="论文列表"><a href="#论文列表" class="headerlink" title="论文列表"></a>论文列表</h3><h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><ul><li>为什么需要这个系统</li><li>系统架构</li><li>接口</li><li>模块及他们之间的关系</li><li>控制流/数据流</li><li>操作实现</li><li>效果/实验</li></ul><p><em>文件系统</em></p><ul><li>持久存储（外存）</li><li>按名访问（路径+文件名）</li><li>虚拟的概念（用户看到的文件都是连续的）</li><li>文件控制块</li></ul><h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ul><li>读论文 The Google File System</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+            <tag> 科技论文写作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>数据存储系统与技术课堂笔记3</title>
+      <link href="/2018/10/19/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B03/"/>
+      <url>/2018/10/19/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B03/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月19日周五下午</p><p>时间：2018年9月30日</p><ul><li>存储硬件组成</li><li>存储软件过程</li><li>磁盘基本原理</li><li>盘阵系统结构</li><li><strong>缓存调度算法</strong></li><li>并行存取技术</li></ul><h3 id="Cache介绍"><a href="#Cache介绍" class="headerlink" title="Cache介绍"></a>Cache介绍</h3><ul><li>CPU<--->A little static RAM(cache) <--->Lots of dynamic RAM</---></---></li></ul><h3 id="层次化存储结构"><a href="#层次化存储结构" class="headerlink" title="层次化存储结构"></a>层次化存储结构</h3><ul><li>Registers</li><li>Cache</li><li>Memory</li><li>Disk</li><li>Tape</li></ul><h3 id="Cache设计问题"><a href="#Cache设计问题" class="headerlink" title="Cache设计问题"></a>Cache设计问题</h3><ul><li>Cache数据结构<ul><li>Cache里的数据组织结构，如队列、数组等</li><li>数据进入Cache的映射方式等</li></ul></li><li>Cache内容管理<ul><li>哪些数据要进行缓存、哪些数据可不缓存</li><li>Cache满了怎么处理</li></ul></li><li>Cache一致性管理<ul><li>缓存与主存数的一致性管理</li><li>多个缓存间数据一致性管理</li></ul></li></ul><h4 id="Cache数据结构-处理器高速缓存"><a href="#Cache数据结构-处理器高速缓存" class="headerlink" title="Cache数据结构-处理器高速缓存"></a>Cache数据结构-处理器高速缓存</h4><ul><li>Cache line<ul><li>Cache Metadata</li><li>Cache Data</li></ul></li><li>Cache 映射方式<ul><li>直接映射：（块地址）MOD（Cache中的块数）</li><li>组映射：（块地址）MOD（Cache中的组数）</li><li>全映射：一个块可以放到Cache中的任何位置</li></ul></li></ul><h4 id="Cache的内容管理-处理器高速缓存"><a href="#Cache的内容管理-处理器高速缓存" class="headerlink" title="Cache的内容管理-处理器高速缓存"></a>Cache的内容管理-处理器高速缓存</h4><ul><li>内容管理确定哪些数据块需要在Cache中缓存，理想状态下Cache中缓存未来一段时间内需要访问的数据块</li><li>当Cache中数据块满了之后，心需要注入的数据块如何替换已有的数据块<ul><li>随机替换策略</li><li>最近最少使用替换策略（LRU）</li><li>先进先出替换策略（FIFO）</li></ul></li></ul><h4 id="Cache一致性管理-处理器高速缓存"><a href="#Cache一致性管理-处理器高速缓存" class="headerlink" title="Cache一致性管理-处理器高速缓存"></a>Cache一致性管理-处理器高速缓存</h4><ul><li>由于Cache的存在，数据可能存在于Cache和/或下一级存储层次中，当数据写入时<ul><li>写命中 + 写未命中<ul><li>写直达 + 不写分配</li><li>写回法 + 写分配法</li></ul></li></ul></li></ul><h4 id="Cache。。。-阵列控制器缓存"><a href="#Cache。。。-阵列控制器缓存" class="headerlink" title="Cache。。。-阵列控制器缓存"></a>Cache。。。-阵列控制器缓存</h4><h4 id="Cache。。。-Memcached"><a href="#Cache。。。-Memcached" class="headerlink" title="Cache。。。-Memcached"></a>Cache。。。-Memcached</h4><h3 id="进一步阅读"><a href="#进一步阅读" class="headerlink" title="进一步阅读"></a>进一步阅读</h3><ul><li>Memory Systems: Cache, DRAM, Disk, Sep. 2007 Chapter 1</li><li>Compiter Architecture: A Quantitative Approach Fifth Edition, 2012 Appendix-8.1</li><li>海量信息存储， 科学出版社， 2003 Chapter 7.4</li><li>Memcached. <a href="http://memcached.org" target="_blank" rel="noopener">http://memcached.org</a>.</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>数据科学的数学基础课堂笔记2</title>
+      <link href="/2018/10/18/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/"/>
+      <url>/2018/10/18/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月18日 周四下午</p><h3 id="投影定理"><a href="#投影定理" class="headerlink" title="投影定理"></a>投影定理</h3><p>投影：</p><ol><li><strong>正交投影</strong></li><li>斜投影</li></ol><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539840666465.png" alt="正交投影的定义"></p><h3 id="特征值与特征向量的基本概念"><a href="#特征值与特征向量的基本概念" class="headerlink" title="特征值与特征向量的基本概念"></a>特征值与特征向量的基本概念</h3><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539844769935.png" alt="1539844769935"></p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539844787909.png" alt="1539844787909"></p><blockquote><p>同一个特征值对应的特征向量一定不唯一， 他们构成线性子空间，称为特征子空间</p></blockquote><ul><li>不不变子空间：子空间S相对于矩阵A左乘不变，如果x（S=》Ax（S</li></ul><blockquote><p>实矩阵的特征值和特征向量不一定是实特征值和实特征向量，实特征值一定对应实特征向量，复特征值一定对应非实特征向量</p></blockquote><ul><li><p>实对称矩阵A的特征值均为实数，存在n个线性无关且正交的实特征向量，即存在由特征值组成的对角阵A和特征向量组成的正交阵Q， 使得</p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539845503511.png" alt="1539845503511"></p></li><li><p>性质：</p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539845667123.png" alt="1539845667123"></p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539845698151.png" alt="1539845698151"></p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539846632552.png" alt="1539846632552"></p><ul><li><p>代数/几何重数</p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539846670647.png" alt="1539846670647"></p><p><img src="/2018/10/18/数据科学的数学基础课堂笔记2/C:/Users\sayhi\AppData\Local\Temp\1539846793107.png" alt="1539846793107"></p></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>高级数据库系统课堂笔记2</title>
+      <link href="/2018/10/15/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/"/>
+      <url>/2018/10/15/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<p>时间：10月15日晚上 周一</p><ul><li>拆成三个子表的好处和坏处<ul><li>好处：减少死锁几率，免除链接操作，且节省空间</li><li>坏处：需要实现判断人员信息，查找对应的表</li></ul></li></ul><h3 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h3><ol><li>多值辅助索引    <ul><li>辅助索引的效率与查询选择率有关</li></ul></li><li>尽量避免使用存放中间结果的表</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul><li>关系数据库的使用并不容易<ul><li>模式设计需要考虑众多因素</li><li>SQL的书写必须讲究性能</li><li>众多的调优手段：索引、物化视图、硬件</li><li>在分布式环境下，设计和优化需考虑的问题更多</li></ul></li></ul><h3 id="课程架构"><a href="#课程架构" class="headerlink" title="课程架构"></a>课程架构</h3><ul><li>先讲传统数据库，集中的-&gt;分布式</li><li>再讲查询优化，事务处理</li><li>再讲非关系数据库</li><li>功能、性能、易用性</li></ul><hr><h1 id="关系数据库的性能—算子执行"><a href="#关系数据库的性能—算子执行" class="headerlink" title="关系数据库的性能—算子执行"></a>关系数据库的性能—算子执行</h1><blockquote><p>如何把sql变成可执行的东西</p></blockquote><h3 id="关系数据库的查询执行过程"><a href="#关系数据库的查询执行过程" class="headerlink" title="关系数据库的查询执行过程"></a>关系数据库的查询执行过程</h3><p>SQL-&gt; Plans -&gt; Best Plan-&gt; Results</p><blockquote><ul><li>SQL -&gt; Plans: Interpretation</li><li>.</li><li>.</li></ul></blockquote><h3 id="提高数据库性能的宗旨之一"><a href="#提高数据库性能的宗旨之一" class="headerlink" title="提高数据库性能的宗旨之一"></a>提高数据库性能的宗旨之一</h3><ul><li>增加数据访问的局部性：</li><li>【拍照】</li></ul><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul><li>点查询</li><li>范围查询</li><li>多值查询</li></ul><h3 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h3><p>n = 3</p><ul><li>每个节点的大小固定（e.g. 4KB或者8KB）最多容纳n个键和n+1个指针</li><li>除了根节点外，每个节点至少容纳[(n + 1) / 2] - 1个键和[(n + 1) / 2]个指针</li><li>每一行基本有序</li><li>叶子节点每个都有指针往后指</li></ul><h4 id="什么决定了B-Tree的效率？"><a href="#什么决定了B-Tree的效率？" class="headerlink" title="什么决定了B-Tree的效率？"></a>什么决定了B-Tree的效率？</h4><ul><li><p>树的高度决定查询需要I/O次数</p></li><li><p>对于同样规模的数据，n越大树的高度越低。</p></li><li><p>为了提高B-Tree的效率，我们需要增加n，即增加每个节点容纳键和指针的数量（减少键的单个大小）</p><ul><li>用简短的数据类型定义键的属性 e.g. smallint</li><li>对B-Tree进行压缩</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课堂笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>科技论文写作课堂笔记2</title>
       <link href="/2018/10/15/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/"/>
       <url>/2018/10/15/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B02/</url>
@@ -313,9 +407,9 @@
             
             <tag> 技术 </tag>
             
-            <tag> numpy </tag>
-            
             <tag> tricks </tag>
+            
+            <tag> numpy </tag>
             
         </tags>
       
