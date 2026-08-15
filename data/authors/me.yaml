@@ -1,0 +1,39 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+
+name:
+  display: Badstu
+  given: Badstu
+  family: ''
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+
+status:
+  icon: '📚'
+
+role: 学生 / 研究者
+
+bio: |
+  欢迎来到我的个人主页。这里用于展示研究方向、论文、项目和学术经历，
+  也会记录技术思考、阅读笔记与日常生活。
+
+affiliations: []
+
+links:
+  - icon: brands/github
+    url: https://github.com/Badstu
+    label: GitHub
+
+interests:
+  - 研究方向待更新
+
+education: []
+experience: []
+skills: []
+languages:
+  - name: 中文
+    level: 5
+    label: 母语
+awards: []

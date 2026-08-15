@@ -1,0 +1,46 @@
+{{ $destination := .Destination }}
+{{ $isRemote := strings.HasPrefix $destination "http" }}
+{{ $isStatic := strings.HasPrefix $destination "/" }}
+{{ $caption := .Title | default "" }}
+{{ $id := anchorize ($caption | plainify) }}
+{{ $alt := .Text | default ($caption | plainify) }}
+{{ $image := "" }}
+
+{{ if not $isRemote }}
+  {{ $image = (.Page.Resources.ByType "image").GetMatch $destination }}
+  {{ if and (not $image) (not $isStatic) }}
+    {{ $image = resources.Get (path.Join "media" $destination) }}
+  {{ end }}
+{{ end }}
+
+<figure {{ with $id }}id="figure-{{ . }}"{{ end }}>
+  <div class="flex justify-center">
+    <div class="w-full">
+      {{ if $image }}
+        {{ $canProcess := and (reflect.IsImageResourceProcessable $image) (ne $image.MediaType.SubType "gif") }}
+        {{ if $canProcess }}
+          {{ $mediumImage := $image.Fit "760x760 webp" }}
+          {{ $responsive := partial "functions/process_responsive_image.html" (dict "image" $mediumImage "mode" "responsive") }}
+          <img alt="{{ $alt }}"
+               srcset="{{ $responsive.srcset }}"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 760px"
+               src="{{ $responsive.fallback.RelPermalink }}"
+               width="{{ $mediumImage.Width }}"
+               height="{{ $mediumImage.Height }}"
+               loading="lazy"
+               data-zoomable />
+        {{ else }}
+          <img alt="{{ $alt }}" src="{{ $image.RelPermalink }}" loading="lazy" data-zoomable />
+        {{ end }}
+      {{ else }}
+        {{ if and (not $isRemote) (not $isStatic) }}
+          {{ warnf "render-image: could not resolve local image %q — %s" $destination .Position }}
+        {{ end }}
+        <img src="{{ $destination | safeURL }}" alt="{{ $alt }}" loading="lazy" data-zoomable />
+      {{ end }}
+    </div>
+  </div>
+  {{ with $caption }}
+    <figcaption>{{ . | markdownify | emojify }}</figcaption>
+  {{ end }}
+</figure>

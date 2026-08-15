@@ -1,0 +1,53 @@
+hugoblox:
+  schema: '2.0'
+
+  identity:
+    name: Badstu
+    organization: ''
+    type: person
+    tagline: 学术主页与个人博客
+    description: 记录研究、项目、技术思考与日常生活。
+    social: {}
+
+  theme:
+    mode: system
+    pack: default
+    colors:
+      primary: indigo
+      secondary: sky
+      neutral: slate
+
+  typography:
+    pack: academic
+
+  layout:
+    radius: md
+    spacing: comfortable
+    avatar_shape: circle
+
+  header:
+    navbar:
+      enable: true
+      align: center
+      show_logo: true
+      show_language: false
+      show_day_night: true
+      show_search: true
+      highlight_active_link: true
+
+  footer:
+    copyright:
+      notice: '© {year} Badstu. 本站内容除特别说明外，保留所有权利。'
+
+  locale:
+    date_format: '2006年1月2日'
+    time_format: '15:04'
+
+  features:
+    syntax_highlighter:
+      theme_light: github-light
+      theme_dark: github-dark
+    math:
+      enable: true
+    privacy_pack:
+      enable: false
