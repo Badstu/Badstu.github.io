@@ -13,7 +13,6 @@ tags:
 featured: true
 draft: false
 ---
-
 ![星空下阅读一本打开的书](/uploads/blog/reading-under-stars.png)
 
 第一次读《小王子》时，我把它当成一个关于旅行和星球的童话。后来再读，印象最深的却不再是那些奇妙的星球，而是小王子与玫瑰、狐狸之间慢慢建立起来的关系。
