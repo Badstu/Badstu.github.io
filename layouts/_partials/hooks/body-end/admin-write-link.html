@@ -10,7 +10,7 @@
     writeLink.className = `${searchButton.className} admin-write-link`;
     writeLink.setAttribute('aria-label', '{{ if eq .Lang "zh" }}写文章{{ else }}Write a post{{ end }}');
     writeLink.title = '{{ if eq .Lang "zh" }}写文章{{ else }}Write a post{{ end }}';
-    writeLink.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><path d="M13.5 6.5 17.5 10.5M5 19l3.8-.8L19 8a2.1 2.1 0 0 0 0-3l0 0a2.1 2.1 0 0 0-3 0L5.8 15.2 5 19Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.8 5.8 18.2 9.2" stroke="currentColor" stroke-width="1.6"/></svg>';
+    writeLink.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M14 5.5 18.5 10M4 20l4.5-1L20 7.5a2.35 2.35 0 0 0 0-3.3 2.35 2.35 0 0 0-3.3 0L5 15.9 4 20Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.3 5.4 18.6 8.7" stroke="currentColor" stroke-width="1.75"/></svg>';
     searchButton.replaceWith(writeLink);
 
     if (!document.querySelector('.site-language-link')) {

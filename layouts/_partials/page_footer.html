@@ -3,3 +3,22 @@
   {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
 </nav>
 {{ end }}
+
+{{ $comments := site.Params.hugoblox.comments }}
+{{ if and (eq .Section "blog") (eq .Kind "page") $comments.enable (eq $comments.provider "utterances") }}
+<section class="editorial-comments" aria-labelledby="comments-title">
+  <header>
+    <p class="editorial-section-number">{{ if eq .Lang "zh" }}讨论{{ else }}Discussion{{ end }}</p>
+    <h2 id="comments-title">{{ if eq .Lang "zh" }}评论{{ else }}Comments{{ end }}</h2>
+    <p>{{ if eq .Lang "zh" }}使用 GitHub 账号参与讨论，我会在这里回复。{{ else }}Join the discussion with a GitHub account. I reply here as well.{{ end }}</p>
+  </header>
+  <script
+    src="https://utteranc.es/client.js"
+    repo="{{ $comments.repo }}"
+    issue-term="{{ $comments.issue_term | default "pathname" }}"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+{{ end }}

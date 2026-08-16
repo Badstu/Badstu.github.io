@@ -21,12 +21,22 @@
 
 - `content/zh/_index.md`：中文首页内容。
 - `content/en/_index.md`：英文首页内容。
-- `assets/media/authors/me.png`：首页头像。
 - `assets/media/logo.svg`：导航栏 Logo。
 - `config/_default/languages.yaml`：中英文导航菜单。
 - `config/_default/params.yaml`：主题、导航和页脚设置。
 
 修改中文首页时，请同步更新英文首页中的对应字段。
+
+## 启用博客评论
+
+文章页已经接入 Utterances，评论会保存到当前仓库的 GitHub Issues，不需要额外服务器。
+
+1. 打开 Utterances GitHub App：`https://github.com/apps/utterances`。
+2. 点击安装，并只授权 `Badstu/Badstu.github.io` 仓库。
+3. 打开仓库的 `Settings > General > Features`，确认 `Issues` 已启用。
+4. 部署完成后，在任意博客文章底部使用 GitHub 账号发表评论。
+
+评论配置位于 `config/_default/params.yaml` 的 `hugoblox.comments`。站长可以直接在文章页面回复，也可以在仓库对应的 Issue 中回复。
 
 ## 本地预览
 

@@ -38,11 +38,23 @@ body {
 }
 
 #site-header .navbar {
+  position: relative;
   min-height: 68px;
   max-width: 1080px;
   margin: 0 auto;
   padding-right: 24px;
   padding-left: 24px;
+}
+
+@media (min-width: 1024px) {
+  #site-header #nav-menu {
+    position: absolute;
+    left: 50%;
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    transform: translateX(-50%);
+  }
 }
 
 #site-header .navbar-brand {
@@ -116,6 +128,13 @@ body {
   letter-spacing: 0.08em;
 }
 
+#site-header .theme-toggle svg,
+#site-header .admin-write-link svg,
+#site-header .site-language-link svg {
+  width: 20px;
+  height: 20px;
+}
+
 .admin-write-link {
   width: 40px;
   height: 40px;
@@ -179,20 +198,20 @@ body {
 }
 
 .editorial-resume {
-  padding: 66px 0 76px;
+  padding: 54px 0 62px;
 }
 
 .resume-masthead {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-  gap: 58px;
+  gap: 48px;
   align-items: end;
-  padding-bottom: 38px;
+  padding-bottom: 30px;
   border-bottom: 2px solid var(--editorial-ink);
 }
 
 .resume-masthead h1 {
-  margin: 10px 0 15px;
+  margin: 8px 0 12px;
   font-size: clamp(3.8rem, 7vw, 5.8rem);
   font-weight: 500;
   line-height: 0.9;
@@ -221,8 +240,8 @@ body {
 .resume-layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
-  gap: 58px;
-  padding-top: 40px;
+  gap: 48px;
+  padding-top: 30px;
 }
 
 .resume-sidebar {
@@ -233,7 +252,7 @@ body {
   display: flex;
   gap: 9px;
   align-items: flex-start;
-  padding-bottom: 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--editorial-line);
   color: var(--editorial-muted);
   font-size: 0.78rem;
@@ -254,7 +273,7 @@ body {
 }
 
 .resume-contact > div {
-  padding: 15px 0;
+  padding: 11px 0;
   border-bottom: 1px solid var(--editorial-line);
 }
 
@@ -282,7 +301,7 @@ body {
 }
 
 .resume-interests {
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .resume-interests h2,
@@ -323,7 +342,7 @@ body {
 }
 
 .resume-section-intro {
-  padding-bottom: 28px;
+  padding-bottom: 21px;
 }
 
 .resume-section-intro h2 {
@@ -342,7 +361,7 @@ body {
 }
 
 .resume-block {
-  padding: 28px 0 31px;
+  padding: 21px 0 23px;
   border-top: 1px solid var(--editorial-line);
 }
 
@@ -351,7 +370,7 @@ body {
   display: grid;
   grid-template-columns: 112px minmax(0, 1fr);
   gap: 20px;
-  padding: 16px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--editorial-line);
 }
 
@@ -406,7 +425,7 @@ body {
 }
 
 .resume-skills > div {
-  padding: 14px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--editorial-line);
 }
 
@@ -618,7 +637,7 @@ body {
 
 .editorial-post-copy h2 {
   margin: -6px 0 10px;
-  font-size: clamp(1.32rem, 2.3vw, 1.75rem);
+  font-size: clamp(1.16rem, 1.9vw, 1.48rem);
   font-weight: 500;
   line-height: 1.18;
 }
@@ -729,9 +748,12 @@ body {
 }
 
 .blog-search-dialog {
+  position: fixed;
+  inset: 0;
   width: min(680px, calc(100% - 32px));
   max-height: min(720px, calc(100vh - 48px));
   padding: 0;
+  margin: auto;
   border: 0;
   border-radius: 0;
   background: var(--editorial-paper);
@@ -830,25 +852,25 @@ body {
 }
 
 .page-body > main.w-full {
-  max-width: 780px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 78px 24px 96px;
+  padding: 58px 24px 72px;
 }
 
 .page-body > main.w-full > h1 {
   margin: 0;
   color: var(--editorial-ink);
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(2.7rem, 7vw, 4.7rem);
+  font-size: clamp(2rem, 5vw, 3.3rem);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.045em;
 }
 
 .page-body > main.w-full > h1 + div {
-  margin-top: 24px;
-  margin-bottom: 48px;
-  padding-bottom: 22px;
+  margin-top: 18px;
+  margin-bottom: 34px;
+  padding-bottom: 17px;
   border-bottom: 1px solid var(--editorial-line);
 }
 
@@ -868,18 +890,18 @@ body {
 
 .prose p,
 .article-style p {
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .page-body > main.w-full .prose {
   max-width: none;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
 }
 
 .page-body > main.w-full .prose > p:first-of-type {
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: 1.24rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 
 .prose figure,
@@ -891,10 +913,41 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  max-width: 780px;
-  margin: 48px auto 0;
+  max-width: 720px;
+  margin: 38px auto 0;
   padding-top: 22px;
   border-top: 1px solid var(--editorial-line);
+}
+
+.editorial-comments {
+  max-width: 720px;
+  margin: 52px auto 0;
+  padding: 30px 0 0;
+  border-top: 1px solid var(--editorial-line);
+}
+
+.editorial-comments > header {
+  margin-bottom: 24px;
+}
+
+.editorial-comments h2 {
+  margin: 5px 0 7px;
+  color: var(--editorial-ink);
+  font-family: Georgia, "Times New Roman", "Songti SC", "Noto Serif SC", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.editorial-comments > header > p:last-child {
+  margin: 0;
+  color: var(--editorial-muted);
+  font-size: 0.82rem;
+}
+
+.editorial-comments .utterances {
+  max-width: none;
+  margin: 0;
 }
 
 .editorial-article-tags a {
@@ -932,7 +985,7 @@ body {
 
   .resume-layout {
     grid-template-columns: 210px minmax(0, 1fr);
-    gap: 55px;
+    gap: 42px;
   }
 
   .blog-layout {
@@ -1007,7 +1060,7 @@ body {
   }
 
   .resume-masthead {
-    padding-bottom: 43px;
+    padding-bottom: 28px;
   }
 
   .resume-masthead h1 {
@@ -1017,7 +1070,7 @@ body {
   .resume-layout,
   .blog-layout {
     grid-template-columns: 1fr;
-    gap: 54px;
+    gap: 38px;
   }
 
   .resume-sidebar {
