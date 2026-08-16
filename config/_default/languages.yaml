@@ -13,9 +13,6 @@ zh:
       - name: 博客
         url: /blog/
         weight: 20
-      - name: 写文章
-        url: https://app.pagescms.org
-        weight: 30
 
 en:
   locale: en-US
@@ -32,6 +29,3 @@ en:
       - name: Blog
         url: /blog/
         weight: 20
-      - name: Write
-        url: https://app.pagescms.org
-        weight: 30

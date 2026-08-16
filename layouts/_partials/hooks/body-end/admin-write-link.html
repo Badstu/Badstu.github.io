@@ -1,0 +1,30 @@
+<script>
+  (() => {
+    const searchButton = document.querySelector('[data-search-toggle]');
+    if (!searchButton) return;
+
+    const writeLink = document.createElement('a');
+    writeLink.href = 'https://app.pagescms.org';
+    writeLink.target = '_blank';
+    writeLink.rel = 'noopener';
+    writeLink.className = `${searchButton.className} admin-write-link`;
+    writeLink.setAttribute('aria-label', '{{ if eq .Lang "zh" }}写文章{{ else }}Write a post{{ end }}');
+    writeLink.title = '{{ if eq .Lang "zh" }}写文章{{ else }}Write a post{{ end }}';
+    writeLink.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><path d="M13.5 6.5 17.5 10.5M5 19l3.8-.8L19 8a2.1 2.1 0 0 0 0-3l0 0a2.1 2.1 0 0 0-3 0L5.8 15.2 5 19Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.8 5.8 18.2 9.2" stroke="currentColor" stroke-width="1.6"/></svg>';
+    searchButton.replaceWith(writeLink);
+
+    if (!document.querySelector('.site-language-link')) {
+      const utilities = document.querySelector('#site-header .navbar > div:last-child');
+      if (!utilities) return;
+      const languageLink = document.createElement('a');
+      const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+      const isBlogArticle = /^\/blog\/[^/]+/.test(window.location.pathname) || /^\/en\/blog\/[^/]+/.test(window.location.pathname);
+      languageLink.href = isEnglish ? (isBlogArticle ? '/blog/' : '/') : (isBlogArticle ? '/en/blog/' : '/en/');
+      languageLink.className = 'site-language-link';
+      languageLink.setAttribute('aria-label', isEnglish ? '切换到中文' : 'Switch to English');
+      languageLink.title = isEnglish ? '切换到中文' : 'Switch to English';
+      languageLink.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.8 9h16.4M3.8 15h16.4M12 3.5c2.1 2.3 3.2 5.1 3.2 8.5S14.1 18.2 12 20.5M12 3.5C9.9 5.8 8.8 8.6 8.8 12s1.1 6.2 3.2 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg><span>${isEnglish ? '中' : 'EN'}</span>`;
+      utilities.appendChild(languageLink);
+    }
+  })();
+</script>

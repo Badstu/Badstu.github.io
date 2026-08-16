@@ -1,81 +1,77 @@
 ---
 title: Home
-description: Sean's personal homepage for learning, research, technology, reading, and everyday life.
+description: Sean's academic homepage and personal blog.
 
-hero:
-  eyebrow: Personal homepage · Notes on work and life
+profile:
+  eyebrow: Academic homepage · Personal blog
   name: Sean
-  role: '[Academic role / Current position]'
-  intro: I care about questions worth exploring over time, and I enjoy turning what I learn, build, and notice into clear, honest notes worth returning to.
-  affiliation: '[University / Lab / Organization]'
-  location: '[City / Country]'
-  status: Learning and documenting
-  primary_button: Read the blog
-  secondary_button: Write a post
+  name_zh: '[Chinese name]'
+  role: '[Current role, e.g. PhD Student / Research Assistant]'
+  affiliation: '[University · Department · Laboratory]'
+  summary: I am a researcher working on “[primary research area]”. My current work focuses on “[specific research question]”, using “[methods or technologies]” to study “[research subject or application domain]” while considering reliability, interpretability, and long-term value in real-world settings.
+  status: '[Current status, e.g. Open to PhD or research collaborations for 2027]'
+  location: '[City, Country/Region]'
+  email: '[your.name@example.com]'
+  scholar: '[Google Scholar URL]'
+  github: '[GitHub URL]'
 
-about:
-  title: About Me
-  lead: This is a space where professional growth, reading, and everyday life meet.
-  paragraphs:
-    - My main field of study or research is “[research area to be added]”. I am currently interested in “[current topic to be added]” and hope to build a clearer body of knowledge through reading, practice, and writing.
-    - Beyond professional topics, I also write about books, travel, photography, useful tools, and everyday observations. The site does not chase trends or follow one rigid theme; it values honesty, continuity, and ideas that compound over time.
-
-facts:
-  - label: Current Role
-    value: '[To be added]'
-  - label: Affiliation
-    value: '[To be added]'
-  - label: Location
-    value: '[To be added]'
-  - label: Contact
-    value: '[To be added]'
-
-focus:
-  title: Areas of Focus
-  intro: These placeholders can be replaced with your real research topics and interests.
-  items:
-    - icon: '01'
-      title: Research & Learning
-      text: '[Research area, topic, or academic interest]. Notes on papers, questions, and evolving understanding.'
-    - icon: '02'
-      title: Technology & Making
-      text: '[Technical stack or practical direction]. Tools, code, projects, and the process of solving problems.'
-    - icon: '03'
-      title: Reading & Life
-      text: Books, travel, photography, and small discoveries from everyday life beyond professional work.
-
-journey:
-  title: Selected Journey
-  intro: Placeholder entries for education, research, or professional experience.
-  items:
-    - period: '[Year – Present]'
-      title: '[Current stage / Position]'
+cv:
+  title: Curriculum Vitae
+  introduction: My interests sit at the intersection of “[field A]”, “[field B]”, and “[field C]”. Alongside research, I write about technical practice, books, and everyday life, with the aim of turning complex questions into accurate, clear, and reusable knowledge.
+  interests_title: Research Interests
+  interests:
+    - '[Research area one]'
+    - '[Research area two]'
+    - '[Research area three]'
+    - '[Method or application domain]'
+  education_title: Education
+  education:
+    - period: '[20XX – Present]'
+      degree: '[Degree and major]'
+      institution: '[University / Department]'
+      detail: 'Advisor: [Name]. Research focus: [Topic].'
+    - period: '[20XX – 20XX]'
+      degree: '[Degree and major]'
+      institution: '[University / Department]'
+      detail: 'Thesis: [Title or research topic].'
+  experience_title: Research Experience
+  experience:
+    - period: '[20XX – Present]'
+      role: '[Research position / Project role]'
+      organization: '[Laboratory / Research institution]'
+      detail: 'Investigating “[research problem]”; responsible for “[specific contribution]” using “[methods / tools]”. Current output: “[paper, system, or interim result]”.'
+    - period: '[20XX – 20XX]'
+      role: '[Research position / Internship]'
       organization: '[Organization]'
-      text: '[Current research, study, or work]'
-    - period: '[Year – Year]'
-      title: '[Previous stage / Degree]'
-      organization: '[University or Organization]'
-      text: '[Important experience, research topic, or outcome]'
-    - period: '[Year – Year]'
-      title: '[Earlier experience]'
-      organization: '[University or Organization]'
-      text: '[Short description]'
-
-principles:
-  title: Writing Principles
-  items:
-    - Stay curious and keep asking better questions.
-    - Document the process, not only the polished result.
-    - Share knowledge clearly, honestly, and in reusable forms.
-    - Leave room for both professional growth and everyday life.
+      detail: 'Contributed to “[project name]”, primarily working on “[responsibilities and contributions]”.'
+  publications_title: Selected Work
+  publications:
+    - year: '[20XX]'
+      title: '[Paper or project title]'
+      authors: 'Sean, [Collaborator names]'
+      venue: '[Conference / Journal / Project venue]'
+      note: '[Paper URL / DOI / Code URL]'
+    - year: '[20XX]'
+      title: '[Paper or project title]'
+      authors: '[Author list]'
+      venue: '[Conference / Journal / Project venue]'
+      note: '[Award, citation, or open-source information]'
+  skills_title: Skills & Tools
+  skills:
+    - label: Research
+      value: '[Quantitative research, qualitative research, experimental design, literature review, etc.]'
+    - label: Programming
+      value: '[Python, R, MATLAB, PyTorch, LaTeX, etc.]'
+    - label: Languages
+      value: '[Chinese (native), English (level), etc.]'
+  service_title: Service & Honors
+  service:
+    - '[Scholarship, award, or honor, 20XX]'
+    - '[Reviewing, teaching, academic organization, or volunteer service]'
 
 recent:
-  title: Recent Posts
-  intro: Notes on reading, technology, and everyday life. Blog posts remain in their original Chinese.
+  title: Recent Writing
+  intro: Recent notes on research, technology, reading, and everyday life.
   empty: No posts yet.
   all: View all posts
-
-contact:
-  title: Get in Touch
-  text: If you are interested in my work, writing, or projects, feel free to reach out via “[email / social account to be added]”.
 ---

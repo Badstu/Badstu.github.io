@@ -1,77 +1,135 @@
 {{ define "main" }}
 {{ $labels := .Params.filters }}
 {{ $contentSite := site }}
-{{ if eq .Lang "en" }}
-  {{ $contentSite = index (where hugo.Sites "Language.Lang" "zh") 0 }}
-{{ end }}
+{{ if eq .Lang "en" }}{{ $contentSite = index (where hugo.Sites "Language.Lang" "zh") 0 }}{{ end }}
 {{ $posts := (where $contentSite.RegularPages "Section" "blog").ByDate.Reverse }}
 {{ $years := slice }}
+{{ $months := slice }}
 {{ $categories := slice }}
 {{ range $posts }}
   {{ $years = $years | append (string .Date.Year) }}
+  {{ $months = $months | append (.Date.Format "2006-01") }}
   {{ range .Params.categories }}{{ $categories = $categories | append . }}{{ end }}
 {{ end }}
 {{ $years = collections.Reverse (sort ($years | uniq)) }}
+{{ $months = collections.Reverse (sort ($months | uniq)) }}
 {{ $categories = sort ($categories | uniq) }}
 {{ $filterScript := resources.Get "js/blog-filter.js" | minify | fingerprint }}
 
 <main class="editorial-blog" data-blog-browser>
   <div class="editorial-shell">
-    <header class="editorial-blog-header">
-      <p class="editorial-kicker">Writing · Notes · Journal</p>
-      <h1>{{ .Title }}</h1>
-      <p>{{ .Params.intro }}</p>
+    <header class="blog-masthead">
+      <div>
+        <p class="editorial-kicker">Writing · Notes · Journal</p>
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div class="blog-intro">
+        <p>{{ .Params.intro }}</p>
+        <button type="button" class="blog-search-open" data-blog-search-open>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          {{ $labels.search_button }}
+          <span aria-hidden="true">⌘ K</span>
+        </button>
+      </div>
     </header>
 
-    <section class="editorial-filter-bar" aria-label="Blog filters">
-      <label class="editorial-search-field">
-        <span class="sr-only">{{ $labels.search }}</span>
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
-        <input type="search" data-blog-search placeholder="{{ $labels.search }}" />
-      </label>
-      <label><span class="sr-only">{{ $labels.year }}</span><select data-blog-year><option value="">{{ $labels.year }}</option>{{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></label>
-      <label><span class="sr-only">{{ $labels.month }}</span><select data-blog-month><option value="">{{ $labels.month }}</option>{{ range seq 1 12 }}{{ $monthValue := printf "%02d" . }}<option value="{{ $monthValue }}">{{ if eq $.Lang "zh" }}{{ . }}月{{ else }}{{ time.AsTime (printf "2026-%s-01" $monthValue) | time.Format "January" }}{{ end }}</option>{{ end }}</select></label>
-      <label><span class="sr-only">{{ $labels.category }}</span><select data-blog-category><option value="">{{ $labels.category }}</option>{{ range $categories }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></label>
-      <label><span class="sr-only">{{ $labels.sort }}</span><select data-blog-sort><option value="newest">{{ $labels.newest }}</option><option value="oldest">{{ $labels.oldest }}</option><option value="title">{{ $labels.title_asc }}</option></select></label>
-    </section>
+    <div class="blog-layout">
+      <div class="blog-feed">
+        <div class="blog-feed-toolbar">
+          <p><strong data-blog-count>{{ len $posts }}</strong> {{ $labels.results }}</p>
+          <div class="blog-sort" aria-label="{{ $labels.sort }}">
+            <span>{{ $labels.sort }}</span>
+            <button type="button" data-blog-sort="newest" aria-pressed="true">{{ $labels.newest }}</button>
+            <button type="button" data-blog-sort="oldest" aria-pressed="false">{{ $labels.oldest }}</button>
+          </div>
+        </div>
 
-    <div class="editorial-filter-summary">
-      <p><strong data-blog-count>{{ len $posts }}</strong> {{ $labels.results }}</p>
-      <button type="button" data-blog-reset>{{ $labels.reset }}</button>
+        <section class="editorial-post-list" data-blog-grid>
+          {{ range $posts }}
+          {{ $post := . }}
+          {{ $summary := .Params.summary | default .Summary | plainify }}
+          {{ $categoryValues := .Params.categories | default (slice) }}
+          <article
+            data-blog-card
+            data-search="{{ printf "%s %s %s" .Title $summary (delimit $categoryValues " ") | lower }}"
+            data-date="{{ .Date.Unix }}"
+            data-year="{{ .Date.Year }}"
+            data-month="{{ .Date.Format "2006-01" }}"
+            data-categories="{{ delimit $categoryValues "|" }}"
+            class="editorial-post-row{{ if not .Params.cover }} editorial-post-row-no-image{{ end }}">
+            <div class="editorial-post-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
+              {{ with $categoryValues }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
+            </div>
+            <div class="editorial-post-copy">
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p>{{ $summary }}</p>
+              <a class="editorial-read-link" href="{{ .RelPermalink }}">{{ $labels.read_more }} <span aria-hidden="true">→</span></a>
+            </div>
+            {{ with .Params.cover }}<a class="editorial-post-image" href="{{ $post.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" loading="lazy" /></a>{{ end }}
+          </article>
+          {{ end }}
+        </section>
+        <div data-blog-empty hidden class="editorial-empty">{{ $labels.empty }}</div>
+      </div>
+
+      <aside class="blog-archive" aria-label="{{ $labels.browse }}">
+        <div class="archive-section">
+          <h2>{{ $labels.categories }}</h2>
+          <div class="archive-list" data-blog-filter-group="category">
+            <button type="button" data-filter-value="" aria-pressed="true">{{ $labels.all }}</button>
+            {{ range $categories }}<button type="button" data-filter-value="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+          </div>
+        </div>
+
+        <div class="archive-section">
+          <h2>{{ $labels.years }}</h2>
+          <div class="archive-list archive-timeline" data-blog-filter-group="year">
+            <button type="button" data-filter-value="" aria-pressed="true">{{ $labels.all }}</button>
+            {{ range $years }}<button type="button" data-filter-value="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+          </div>
+        </div>
+
+        <div class="archive-section">
+          <h2>{{ $labels.months }}</h2>
+          <div class="archive-list archive-timeline" data-blog-filter-group="month">
+            <button type="button" data-filter-value="" aria-pressed="true">{{ $labels.all }}</button>
+            {{ range $months }}
+              {{ $monthTime := time.AsTime (printf "%s-01" .) }}
+              <button type="button" data-filter-value="{{ . }}" aria-pressed="false">{{ if eq $.Lang "zh" }}{{ $monthTime.Format "2006年1月" }}{{ else }}{{ $monthTime.Format "January 2006" }}{{ end }}</button>
+            {{ end }}
+          </div>
+        </div>
+
+        <button type="button" class="archive-reset" data-blog-reset>{{ $labels.reset }}</button>
+      </aside>
     </div>
-
-    <section class="editorial-post-list" data-blog-grid>
-      {{ range $posts }}
-      {{ $post := . }}
-      {{ $summary := .Params.summary | default .Summary | plainify }}
-      {{ $categoryValues := .Params.categories | default (slice) }}
-      <article
-        data-blog-card
-        data-title="{{ .Title | lower }}"
-        data-search="{{ printf "%s %s %s" .Title $summary (delimit $categoryValues " ") | lower }}"
-        data-date="{{ .Date.Unix }}"
-        data-year="{{ .Date.Year }}"
-        data-month="{{ .Date.Format "01" }}"
-        data-categories="{{ delimit $categoryValues "|" }}"
-        class="editorial-post-row{{ if not .Params.cover }} editorial-post-row-no-image{{ end }}">
-        <div class="editorial-post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
-          {{ with $categoryValues }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
-        </div>
-        <div class="editorial-post-copy">
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p>{{ $summary }}</p>
-          <a class="editorial-read-link" href="{{ .RelPermalink }}">{{ $labels.read_more }} <span aria-hidden="true">→</span></a>
-        </div>
-        {{ with .Params.cover }}
-        <a class="editorial-post-image" href="{{ $post.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" loading="lazy" /></a>
-        {{ end }}
-      </article>
-      {{ end }}
-    </section>
-
-    <div data-blog-empty hidden class="editorial-empty">{{ $labels.empty }}</div>
   </div>
+
+  <dialog class="blog-search-dialog" data-blog-search-dialog aria-labelledby="blog-search-title">
+    <div class="blog-search-panel">
+      <header>
+        <h2 id="blog-search-title">{{ $labels.search_title }}</h2>
+        <button type="button" data-blog-search-close aria-label="{{ $labels.close }}">×</button>
+      </header>
+      <label class="blog-search-field">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="sr-only">{{ $labels.search_hint }}</span>
+        <input type="search" data-blog-search placeholder="{{ $labels.search_hint }}" autocomplete="off" />
+      </label>
+      <div class="blog-search-results">
+        {{ range $posts }}
+        {{ $summary := .Params.summary | default .Summary | plainify }}
+        {{ $categoryValues := .Params.categories | default (slice) }}
+        <a href="{{ .RelPermalink }}" data-blog-search-result data-search="{{ printf "%s %s %s" .Title $summary (delimit $categoryValues " ") | lower }}">
+          <span>{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</span>
+          <strong>{{ .Title }}</strong>
+        </a>
+        {{ end }}
+        <p data-blog-search-empty hidden>{{ $labels.search_empty }}</p>
+      </div>
+    </div>
+  </dialog>
 </main>
 <script defer src="{{ $filterScript.RelPermalink }}" integrity="{{ $filterScript.Data.Integrity }}"></script>
 {{ end }}

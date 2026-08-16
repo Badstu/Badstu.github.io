@@ -1,153 +1,120 @@
 {{ define "main" }}
-{{ $hero := .Params.hero }}
-{{ $about := .Params.about }}
-{{ $facts := .Params.facts }}
-{{ $focus := .Params.focus }}
-{{ $journey := .Params.journey }}
-{{ $principles := .Params.principles }}
+{{ $profile := .Params.profile }}
+{{ $cv := .Params.cv }}
 {{ $recent := .Params.recent }}
-{{ $contact := .Params.contact }}
 {{ $chineseSite := index (where hugo.Sites "Language.Lang" "zh") 0 }}
 {{ $recentPosts := first 4 ((where $chineseSite.RegularPages "Section" "blog").ByDate.Reverse) }}
 
 <main class="editorial-home">
-  <section class="editorial-hero">
-    <div class="editorial-shell editorial-hero-grid">
-      <div>
-        <p class="editorial-kicker">{{ $hero.eyebrow }}</p>
-        <h1 class="editorial-display">{{ $hero.name }}</h1>
-        <p class="editorial-role">{{ $hero.role }}</p>
-        <p class="editorial-deck">{{ $hero.intro }}</p>
-        <nav class="editorial-actions" aria-label="Primary links">
-          <a href="{{ "blog/" | relLangURL }}">{{ $hero.primary_button }} <span aria-hidden="true">↗</span></a>
-          <a href="https://app.pagescms.org" target="_blank" rel="noopener">{{ $hero.secondary_button }} <span aria-hidden="true">↗</span></a>
-        </nav>
-      </div>
-      <aside class="editorial-facts" aria-label="Profile details">
-        <div class="editorial-status"><span></span>{{ $hero.status }}</div>
-        <dl>
-          {{ range $facts }}
-          <div>
-            <dt>{{ .label }}</dt>
-            <dd>{{ .value }}</dd>
-          </div>
-          {{ end }}
-        </dl>
-      </aside>
-    </div>
-  </section>
-
-  <section class="editorial-section">
-    <div class="editorial-shell editorial-two-column">
-      <header>
-        <p class="editorial-section-number">01</p>
-        <h2>{{ $about.title }}</h2>
-      </header>
-      <div class="editorial-copy">
-        <p class="editorial-lead">{{ $about.lead }}</p>
-        {{ range $about.paragraphs }}<p>{{ . }}</p>{{ end }}
-      </div>
-    </div>
-  </section>
-
-  <section class="editorial-section">
+  <section class="editorial-resume">
     <div class="editorial-shell">
-      <header class="editorial-section-heading">
+      <header class="resume-masthead">
         <div>
-          <p class="editorial-section-number">02</p>
-          <h2>{{ $focus.title }}</h2>
+          <p class="editorial-kicker">{{ $profile.eyebrow }}</p>
+          <h1>{{ $profile.name }}</h1>
+          <p class="resume-role">{{ $profile.role }}</p>
+          <p class="resume-affiliation">{{ $profile.affiliation }}</p>
         </div>
-        <p>{{ $focus.intro }}</p>
+        <p class="resume-summary">{{ $profile.summary }}</p>
       </header>
-      <div class="editorial-columns">
-        {{ range $focus.items }}
-        <article>
-          <p class="editorial-index">{{ .icon }}</p>
-          <h3>{{ .title }}</h3>
-          <p>{{ .text }}</p>
-        </article>
-        {{ end }}
+
+      <div class="resume-layout">
+        <aside class="resume-sidebar" aria-label="{{ $cv.title }}">
+          <div class="resume-status"><span aria-hidden="true"></span>{{ $profile.status }}</div>
+
+          <dl class="resume-contact">
+            <div><dt>{{ if eq .Lang "zh" }}姓名{{ else }}Name{{ end }}</dt><dd>{{ $profile.name_zh }}</dd></div>
+            <div><dt>{{ if eq .Lang "zh" }}地点{{ else }}Location{{ end }}</dt><dd>{{ $profile.location }}</dd></div>
+            <div><dt>Email</dt><dd>{{ $profile.email }}</dd></div>
+            <div><dt>Scholar</dt><dd>{{ $profile.scholar }}</dd></div>
+            <div><dt>GitHub</dt><dd>{{ $profile.github }}</dd></div>
+          </dl>
+
+          <section class="resume-interests">
+            <h2>{{ $cv.interests_title }}</h2>
+            <ul>{{ range $cv.interests }}<li>{{ . }}</li>{{ end }}</ul>
+          </section>
+        </aside>
+
+        <div class="resume-body">
+          <header class="resume-section-intro">
+            <p class="editorial-section-number">01</p>
+            <h2>{{ $cv.title }}</h2>
+            <p>{{ $cv.introduction }}</p>
+          </header>
+
+          <section class="resume-block">
+            <h3>{{ $cv.education_title }}</h3>
+            <div class="resume-entries">
+              {{ range $cv.education }}
+              <article>
+                <time>{{ .period }}</time>
+                <div><h4>{{ .degree }}</h4><p class="resume-organization">{{ .institution }}</p><p>{{ .detail }}</p></div>
+              </article>
+              {{ end }}
+            </div>
+          </section>
+
+          <section class="resume-block">
+            <h3>{{ $cv.experience_title }}</h3>
+            <div class="resume-entries">
+              {{ range $cv.experience }}
+              <article>
+                <time>{{ .period }}</time>
+                <div><h4>{{ .role }}</h4><p class="resume-organization">{{ .organization }}</p><p>{{ .detail }}</p></div>
+              </article>
+              {{ end }}
+            </div>
+          </section>
+
+          <section class="resume-block">
+            <h3>{{ $cv.publications_title }}</h3>
+            <ol class="resume-publications">
+              {{ range $cv.publications }}
+              <li><span>{{ .year }}</span><div><h4>{{ .title }}</h4><p>{{ .authors }}</p><p><em>{{ .venue }}</em> · {{ .note }}</p></div></li>
+              {{ end }}
+            </ol>
+          </section>
+
+          <section class="resume-block resume-compact-grid">
+            <div>
+              <h3>{{ $cv.skills_title }}</h3>
+              <dl class="resume-skills">{{ range $cv.skills }}<div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>{{ end }}</dl>
+            </div>
+            <div>
+              <h3>{{ $cv.service_title }}</h3>
+              <ul class="resume-service">{{ range $cv.service }}<li>{{ . }}</li>{{ end }}</ul>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="editorial-section">
-    <div class="editorial-shell editorial-two-column">
-      <header>
-        <p class="editorial-section-number">03</p>
-        <h2>{{ $journey.title }}</h2>
-        <p class="editorial-heading-note">{{ $journey.intro }}</p>
-      </header>
-      <div class="editorial-timeline">
-        {{ range $journey.items }}
-        <article>
-          <time>{{ .period }}</time>
-          <div>
-            <h3>{{ .title }}</h3>
-            <p class="editorial-organization">{{ .organization }}</p>
-            <p>{{ .text }}</p>
-          </div>
-        </article>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-
-  <section class="editorial-section editorial-principles-section">
-    <div class="editorial-shell editorial-two-column">
-      <header>
-        <p class="editorial-section-number">04</p>
-        <h2>{{ $principles.title }}</h2>
-      </header>
-      <ol class="editorial-principles">
-        {{ range $index, $principle := $principles.items }}
-        <li><span>{{ printf "%02d" (add $index 1) }}</span><p>{{ $principle }}</p></li>
-        {{ end }}
-      </ol>
-    </div>
-  </section>
-
-  <section class="editorial-section editorial-writing-section">
+  <section class="editorial-recent">
     <div class="editorial-shell">
-      <header class="editorial-section-heading">
-        <div>
-          <p class="editorial-section-number">05</p>
-          <h2>{{ $recent.title }}</h2>
-        </div>
+      <header class="recent-heading">
+        <div><p class="editorial-section-number">02</p><h2>{{ $recent.title }}</h2></div>
         <p>{{ $recent.intro }}</p>
       </header>
 
       {{ if $recentPosts }}
-      <div class="editorial-writing-list">
-        {{ range $postIndex, $post := $recentPosts }}
-        <article class="editorial-writing-item{{ if and (eq $postIndex 0) $post.Params.cover }} editorial-writing-featured{{ end }}">
-          {{ if and (eq $postIndex 0) $post.Params.cover }}
-            {{ with $post.Params.cover }}
-            <a class="editorial-writing-image" href="{{ $post.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" loading="lazy" /></a>
-            {{ end }}
-          {{ end }}
-          <div class="editorial-writing-meta">
-            <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ $post.Date.Format "2006.01.02" }}{{ else }}{{ $post.Date.Format "Jan 2, 2006" }}{{ end }}</time>
-            {{ with $post.Params.categories }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
+      <div class="recent-list">
+        {{ range $recentPosts }}
+        <article>
+          <div class="recent-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
+            {{ with .Params.categories }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
           </div>
-          <div class="editorial-writing-body">
-            <h3><a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h3>
-            <p>{{ $post.Params.summary | default $post.Summary | plainify }}</p>
+          <div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Params.summary | default .Summary | plainify }}</p>
           </div>
         </article>
         {{ end }}
       </div>
-      {{ else }}
-      <p>{{ $recent.empty }}</p>
-      {{ end }}
+      {{ else }}<p class="editorial-empty">{{ $recent.empty }}</p>{{ end }}
       <p class="editorial-all-link"><a href="{{ "blog/" | relLangURL }}">{{ $recent.all }} <span aria-hidden="true">→</span></a></p>
-    </div>
-  </section>
-
-  <section class="editorial-contact">
-    <div class="editorial-shell editorial-two-column">
-      <h2>{{ $contact.title }}</h2>
-      <p>{{ $contact.text }}</p>
     </div>
   </section>
 </main>

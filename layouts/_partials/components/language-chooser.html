@@ -1,0 +1,13 @@
+{{ $page := .page }}
+{{ with index $page.Translations 0 }}
+<a
+  class="site-language-link"
+  href="{{ .RelPermalink }}"
+  hreflang="{{ .Lang }}"
+  lang="{{ .Lang }}"
+  aria-label="{{ if eq $page.Lang "zh" }}Switch to English{{ else }}切换到中文{{ end }}"
+  title="{{ if eq $page.Lang "zh" }}Switch to English{{ else }}切换到中文{{ end }}">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.8 9h16.4M3.8 15h16.4M12 3.5c2.1 2.3 3.2 5.1 3.2 8.5S14.1 18.2 12 20.5M12 3.5C9.9 5.8 8.8 8.6 8.8 12s1.1 6.2 3.2 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>
+  <span>{{ if eq $page.Lang "zh" }}EN{{ else }}中{{ end }}</span>
+</a>
+{{ end }}

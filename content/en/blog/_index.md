@@ -1,17 +1,22 @@
 ---
 title: Blog
-description: Notes on learning, technology, reading, and everyday life.
-intro: Browse the Chinese-language posts by keyword, year, month, category, or order.
+description: Notes on research, technology, reading, and everyday life.
+intro: Writing helps me clarify questions, preserve experience, and leave dependable coordinates in a rapidly changing world.
 filters:
-  search: Search titles, summaries, or categories
-  year: All years
-  month: All months
-  category: All categories
-  sort: Sort by
+  search_button: Search posts
+  search_title: Search the blog
+  search_hint: Search titles, summaries, or categories
+  search_empty: No matching posts found.
+  close: Close
+  browse: Browse
+  categories: Categories
+  years: Years
+  months: Months
+  sort: Order
   newest: Newest first
   oldest: Oldest first
-  title_asc: Title A–Z
-  reset: Reset filters
+  all: All
+  reset: Clear filters
   results: posts
   empty: No posts match the selected filters.
   read_more: Read post
