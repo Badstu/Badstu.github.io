@@ -52,18 +52,28 @@
           {{ $post := . }}
           {{ $summary := .Params.summary | default .Summary | plainify }}
           {{ $categoryValues := .Params.categories | default (slice) }}
+          {{ $tagValues := .Params.tags | default (slice) }}
           <article
             data-blog-card
-            data-search="{{ printf "%s %s %s %s" .Title $summary (delimit $categoryValues " ") (delimit (.Params.tags | default (slice)) " ") | lower }}"
+            data-search="{{ printf "%s %s %s %s" .Title $summary (delimit $categoryValues " ") (delimit $tagValues " ") | lower }}"
             data-date="{{ .Date.Unix }}"
             data-year="{{ .Date.Year }}"
             data-month="{{ .Date.Format "2006-01" }}"
             data-categories="{{ delimit $categoryValues "|" }}"
-            data-tags="{{ delimit (.Params.tags | default (slice)) "|" }}"
+            data-tags="{{ delimit $tagValues "|" }}"
             class="editorial-post-row{{ if not .Params.cover }} editorial-post-row-no-image{{ end }}">
             <div class="editorial-post-meta">
               <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
-              {{ with $categoryValues }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
+              {{ with $categoryValues }}
+              <div class="editorial-post-categories" aria-label="{{ $labels.categories }}">
+                {{ range . }}<span>{{ . }}</span>{{ end }}
+              </div>
+              {{ end }}
+              {{ with $tagValues }}
+              <div class="editorial-post-tags" aria-label="{{ $labels.tags }}">
+                {{ range . }}<span>#{{ . }}</span>{{ end }}
+              </div>
+              {{ end }}
             </div>
             <div class="editorial-post-copy">
               <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

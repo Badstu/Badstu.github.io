@@ -55,6 +55,9 @@ hugoblox:
 
   comments:
     enable: true
-    provider: utterances
+    provider: giscus
     repo: Badstu/Badstu.github.io
-    issue_term: pathname
+    repo_id: R_kgDOI3GKqw
+    category: Announcements
+    category_id: DIC_kwDOI3GKq84DDgVg
+    mapping: pathname

@@ -12,20 +12,36 @@
 {{ end }}
 
 {{ $comments := site.Params.hugoblox.comments }}
-{{ if and (eq .Section "blog") (eq .Kind "page") $comments.enable (eq $comments.provider "utterances") }}
+{{ $isBlogArticle := and (eq .Section "blog") (eq .Kind "page") }}
+{{ $isGiscus := and $comments.enable (eq $comments.provider "giscus") }}
+{{ $giscusReady := and $isGiscus $comments.repo $comments.repo_id $comments.category $comments.category_id }}
+{{ if and $isBlogArticle $giscusReady }}
 <section class="editorial-comments" aria-labelledby="comments-title">
   <header>
     <p class="editorial-section-number">{{ if eq .Lang "zh" }}讨论{{ else }}Discussion{{ end }}</p>
     <h2 id="comments-title">{{ if eq .Lang "zh" }}评论{{ else }}Comments{{ end }}</h2>
-    <p>{{ if eq .Lang "zh" }}使用 GitHub 账号参与讨论，我会在这里回复。{{ else }}Join the discussion with a GitHub account. I reply here as well.{{ end }}</p>
+    <p>{{ if eq .Lang "zh" }}使用 GitHub 账号参与讨论，支持回复指定评论。{{ else }}Join with a GitHub account and reply to individual comments.{{ end }}</p>
   </header>
   <script
-    src="https://utteranc.es/client.js"
-    repo="{{ $comments.repo }}"
-    issue-term="{{ $comments.issue_term | default "pathname" }}"
-    theme="preferred-color-scheme"
+    src="https://giscus.app/client.js"
+    data-repo="{{ $comments.repo }}"
+    data-repo-id="{{ $comments.repo_id }}"
+    data-category="{{ $comments.category }}"
+    data-category-id="{{ $comments.category_id }}"
+    data-mapping="{{ $comments.mapping | default "pathname" }}"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="{{ if eq .Lang "zh" }}zh-CN{{ else }}en{{ end }}"
+    data-loading="lazy"
     crossorigin="anonymous"
     async>
   </script>
+</section>
+{{ else if and $isBlogArticle $isGiscus hugo.IsServer }}
+<section class="editorial-comments editorial-comments--setup" aria-label="Giscus setup notice">
+  <p>{{ if eq .Lang "zh" }}评论区等待配置：请启用 GitHub Discussions，并在 <code>config/_default/params.yaml</code> 中填写 <code>category_id</code>。{{ else }}Comments need configuration: enable GitHub Discussions and add <code>category_id</code> in <code>config/_default/params.yaml</code>.{{ end }}</p>
 </section>
 {{ end }}

@@ -475,6 +475,25 @@ body {
   text-transform: uppercase;
 }
 
+.editorial-post-categories,
+.editorial-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 7px;
+}
+
+.editorial-post-categories span {
+  color: var(--editorial-ink);
+  font-weight: 650;
+}
+
+.editorial-post-tags span {
+  color: var(--editorial-accent);
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .recent-list h3 {
   margin: -4px 0 9px;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
@@ -851,34 +870,34 @@ body {
   color: var(--editorial-ink);
 }
 
-.page-body > main.w-full {
+.page-body article main.w-full {
   max-width: 720px;
   margin: 0 auto;
-  padding: 58px 24px 72px;
+  padding: 50px 24px 66px;
 }
 
 .page-body article main > h1 {
   max-width: 760px;
 }
 
-.page-body > main.w-full > h1 {
+.page-body article main.w-full > h1 {
   margin: 0;
   color: var(--editorial-ink);
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-size: clamp(1.65rem, 4vw, 2.6rem);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.045em;
 }
 
-.page-body > main.w-full > h1 + div {
+.page-body article main.w-full > h1 + div:not(.editorial-article-meta) {
   margin-top: 18px;
   margin-bottom: 34px;
   padding-bottom: 17px;
   border-bottom: 1px solid var(--editorial-line);
 }
 
-.page-body > main.w-full > h1 + div > div:first-child {
+.page-body article main.w-full > h1 + div:not(.editorial-article-meta) > div:first-child {
   color: var(--editorial-muted);
   font-size: 0.76rem;
   letter-spacing: 0.04em;
@@ -897,15 +916,15 @@ body {
   line-height: 1.8;
 }
 
-.page-body > main.w-full .prose {
+.page-body article main.w-full .prose {
   max-width: none;
-  font-size: 0.91rem;
+  font-size: 0.86rem;
 }
 
-.page-body > main.w-full .prose > p:first-of-type {
+.page-body article main.w-full .prose > p:first-of-type {
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: 1rem;
-  line-height: 1.68;
+  font-size: 0.93rem;
+  line-height: 1.65;
 }
 
 .prose figure,
@@ -948,9 +967,22 @@ body {
   font-size: 0.82rem;
 }
 
-.editorial-comments .utterances {
+.editorial-comments .giscus,
+.editorial-comments .giscus-frame {
   max-width: none;
+  width: 100%;
   margin: 0;
+}
+
+.editorial-comments--setup {
+  padding: 18px 0 0;
+  color: var(--editorial-muted);
+  font-size: 0.8rem;
+}
+
+.editorial-comments--setup code {
+  color: var(--editorial-ink);
+  font-size: 0.76rem;
 }
 
 .editorial-article-tags a {

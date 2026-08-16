@@ -29,14 +29,16 @@
 
 ## 启用博客评论
 
-文章页已经接入 Utterances，评论会保存到当前仓库的 GitHub Issues，不需要额外服务器。
+文章页已经接入 Giscus，评论会保存到当前仓库的 GitHub Discussions，不需要额外服务器，并支持针对单条评论进行嵌套回复。
 
-1. 打开 Utterances GitHub App：`https://github.com/apps/utterances`。
-2. 点击安装，并只授权 `Badstu/Badstu.github.io` 仓库。
-3. 打开仓库的 `Settings > General > Features`，确认 `Issues` 已启用。
-4. 部署完成后，在任意博客文章底部使用 GitHub 账号发表评论。
+1. 打开仓库的 `Settings > General > Features`，启用 `Discussions`。
+2. 进入仓库的 `Discussions` 页面并完成首次设置。
+3. 安装 Giscus GitHub App：`https://github.com/apps/giscus`，并只授权 `Badstu/Badstu.github.io`。
+4. 打开 Giscus 配置页：`https://giscus.app/zh-CN`，输入仓库名并选择 `Announcements` 分类。
+5. 从生成的脚本中复制 `data-category-id`，填入 `config/_default/params.yaml` 的 `hugoblox.comments.category_id`。
+6. 本地预览确认评论区正常显示后提交并部署。
 
-评论配置位于 `config/_default/params.yaml` 的 `hugoblox.comments`。站长可以直接在文章页面回复，也可以在仓库对应的 Issue 中回复。
+评论配置位于 `config/_default/params.yaml` 的 `hugoblox.comments`。在 `category_id` 留空时，生产环境不会加载未配置完成的评论组件；本地开发环境会显示配置提示。Giscus 使用 GitHub Discussions 的回复结构，站长可直接在文章评论区或仓库 Discussions 页面回复。
 
 ## 本地预览
 
