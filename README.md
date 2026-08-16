@@ -19,8 +19,16 @@
 
 ## 修改主页
 
-- `content/zh/_index.md`：中文首页内容。
-- `content/en/_index.md`：英文首页内容。
+1. 打开 Pages CMS：`https://app.pagescms.org`，使用 GitHub 登录并选择 `Badstu/Badstu.github.io`。
+2. 在左侧打开“个人主页”。
+3. 选择“中文个人简历”或“English CV”。
+4. 修改个人资料、研究兴趣、教育经历、研究经历、代表成果、技能、荣誉和最近文章板块文案。
+5. 保存后，Pages CMS 会提交到 GitHub，GitHub Actions 会自动重新发布网站。
+
+中文和英文简历分别存储在以下文件中，也可以直接编辑：
+
+- `content/zh/_index.md`：中文个人主页与简历。
+- `content/en/_index.md`：英文个人主页与简历。
 - `assets/media/logo.svg`：导航栏 Logo。
 - `config/_default/languages.yaml`：中英文导航菜单。
 - `config/_default/params.yaml`：主题、导航和页脚设置。

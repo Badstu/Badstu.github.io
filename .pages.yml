@@ -7,6 +7,374 @@ media:
     categories: [image]
 
 content:
+  - name: homepage
+    label: 个人主页
+    type: group
+    items:
+      - name: homepage_zh
+        label: 中文个人简历
+        type: file
+        path: content/zh/_index.md
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: 页面标题
+            type: string
+            required: true
+          - name: description
+            label: 页面描述
+            type: text
+          - name: profile
+            label: 个人资料
+            type: object
+            fields:
+              - name: eyebrow
+                label: 顶部短标题
+                type: string
+              - name: name
+                label: 英文名或展示名称
+                type: string
+                required: true
+              - name: name_zh
+                label: 中文姓名
+                type: string
+              - name: role
+                label: 当前职位
+                type: string
+              - name: affiliation
+                label: 学校、院系与实验室
+                type: string
+              - name: summary
+                label: 科研简介
+                type: text
+              - name: status
+                label: 当前状态
+                type: string
+              - name: location
+                label: 所在地
+                type: string
+              - name: email
+                label: 邮箱
+                type: string
+              - name: scholar
+                label: Google Scholar 链接
+                type: string
+              - name: github
+                label: GitHub 链接
+                type: string
+          - name: cv
+            label: 个人简历
+            type: object
+            fields:
+              - name: title
+                label: 板块标题
+                type: string
+              - name: introduction
+                label: 简历介绍
+                type: text
+              - name: interests_title
+                label: 研究兴趣标题
+                type: string
+              - name: interests
+                label: 研究兴趣
+                type: string
+                list: true
+              - name: education_title
+                label: 教育经历标题
+                type: string
+              - name: education
+                label: 教育经历
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{period} · {degree}'
+                fields:
+                  - name: period
+                    label: 时间
+                    type: string
+                  - name: degree
+                    label: 学位与专业
+                    type: string
+                  - name: institution
+                    label: 学校与院系
+                    type: string
+                  - name: detail
+                    label: 详细说明
+                    type: text
+              - name: experience_title
+                label: 研究经历标题
+                type: string
+              - name: experience
+                label: 研究或工作经历
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{period} · {role}'
+                fields:
+                  - name: period
+                    label: 时间
+                    type: string
+                  - name: role
+                    label: 职位或项目角色
+                    type: string
+                  - name: organization
+                    label: 实验室或机构
+                    type: string
+                  - name: detail
+                    label: 工作内容与成果
+                    type: text
+              - name: publications_title
+                label: 代表成果标题
+                type: string
+              - name: publications
+                label: 论文与项目成果
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{year} · {title}'
+                fields:
+                  - name: year
+                    label: 年份
+                    type: string
+                  - name: title
+                    label: 成果标题
+                    type: string
+                  - name: authors
+                    label: 作者
+                    type: string
+                  - name: venue
+                    label: 会议、期刊或平台
+                    type: string
+                  - name: note
+                    label: 链接、奖项或补充说明
+                    type: text
+              - name: skills_title
+                label: 技能标题
+                type: string
+              - name: skills
+                label: 技能与工具
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{label}'
+                fields:
+                  - name: label
+                    label: 类别
+                    type: string
+                  - name: value
+                    label: 内容
+                    type: text
+              - name: service_title
+                label: 学术服务与荣誉标题
+                type: string
+              - name: service
+                label: 学术服务、奖项与荣誉
+                type: string
+                list: true
+          - name: recent
+            label: 最近文章板块
+            type: object
+            fields:
+              - name: title
+                label: 标题
+                type: string
+              - name: intro
+                label: 简介
+                type: text
+              - name: empty
+                label: 无文章提示
+                type: string
+              - name: all
+                label: 查看全部按钮
+                type: string
+
+      - name: homepage_en
+        label: English CV
+        type: file
+        path: content/en/_index.md
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Page title
+            type: string
+            required: true
+          - name: description
+            label: Page description
+            type: text
+          - name: profile
+            label: Profile
+            type: object
+            fields:
+              - name: eyebrow
+                label: Kicker
+                type: string
+              - name: name
+                label: Display name
+                type: string
+                required: true
+              - name: name_zh
+                label: Chinese name
+                type: string
+              - name: role
+                label: Current role
+                type: string
+              - name: affiliation
+                label: University, department and laboratory
+                type: string
+              - name: summary
+                label: Research summary
+                type: text
+              - name: status
+                label: Current status
+                type: string
+              - name: location
+                label: Location
+                type: string
+              - name: email
+                label: Email
+                type: string
+              - name: scholar
+                label: Google Scholar URL
+                type: string
+              - name: github
+                label: GitHub URL
+                type: string
+          - name: cv
+            label: Curriculum Vitae
+            type: object
+            fields:
+              - name: title
+                label: Section title
+                type: string
+              - name: introduction
+                label: Introduction
+                type: text
+              - name: interests_title
+                label: Research interests title
+                type: string
+              - name: interests
+                label: Research interests
+                type: string
+                list: true
+              - name: education_title
+                label: Education title
+                type: string
+              - name: education
+                label: Education
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{period} · {degree}'
+                fields:
+                  - name: period
+                    label: Period
+                    type: string
+                  - name: degree
+                    label: Degree and major
+                    type: string
+                  - name: institution
+                    label: University and department
+                    type: string
+                  - name: detail
+                    label: Details
+                    type: text
+              - name: experience_title
+                label: Experience title
+                type: string
+              - name: experience
+                label: Research or work experience
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{period} · {role}'
+                fields:
+                  - name: period
+                    label: Period
+                    type: string
+                  - name: role
+                    label: Position or project role
+                    type: string
+                  - name: organization
+                    label: Laboratory or organization
+                    type: string
+                  - name: detail
+                    label: Responsibilities and outcomes
+                    type: text
+              - name: publications_title
+                label: Selected work title
+                type: string
+              - name: publications
+                label: Publications and projects
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{year} · {title}'
+                fields:
+                  - name: year
+                    label: Year
+                    type: string
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: authors
+                    label: Authors
+                    type: string
+                  - name: venue
+                    label: Conference, journal or venue
+                    type: string
+                  - name: note
+                    label: Links, awards or notes
+                    type: text
+              - name: skills_title
+                label: Skills title
+                type: string
+              - name: skills
+                label: Skills and tools
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: '{label}'
+                fields:
+                  - name: label
+                    label: Category
+                    type: string
+                  - name: value
+                    label: Details
+                    type: text
+              - name: service_title
+                label: Service and honors title
+                type: string
+              - name: service
+                label: Service, awards and honors
+                type: string
+                list: true
+          - name: recent
+            label: Recent writing section
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: intro
+                label: Introduction
+                type: text
+              - name: empty
+                label: Empty-state message
+                type: string
+              - name: all
+                label: View-all button
+                type: string
+
   - name: blog
     label: 博客文章
     type: collection
