@@ -5,8 +5,8 @@ hugoblox:
     name: Badstu
     organization: ''
     type: person
-    tagline: 学术主页与个人博客
-    description: 记录研究、项目、技术思考与日常生活。
+    tagline: Personal homepage and blog
+    description: Notes on learning, research, technology, reading, and everyday life.
     social: {}
 
   theme:
@@ -21,26 +21,27 @@ hugoblox:
     pack: academic
 
   layout:
-    radius: md
+    radius: lg
     spacing: comfortable
-    avatar_shape: circle
+    avatar_shape: rounded
 
   header:
-    navbar:
-      enable: true
-      align: center
-      show_logo: true
-      show_language: false
-      show_day_night: true
-      show_search: true
-      highlight_active_link: true
+    enable: true
+    align: center
+    sticky: true
+    show_logo: true
+    show_title: false
+    search: true
+    theme_toggle: true
+    language_switcher: true
 
   footer:
+    language_switcher: false
     copyright:
-      notice: '© {year} Badstu. 本站内容除特别说明外，保留所有权利。'
+      notice: '© {year} Badstu.'
 
   locale:
-    date_format: '2006年1月2日'
+    date_format: '2006-01-02'
     time_format: '15:04'
 
   features:

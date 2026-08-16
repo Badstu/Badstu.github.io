@@ -2,8 +2,6 @@
 title: 欢迎来到我的主页
 date: 2026-08-15
 summary: 这是网站搭建完成后的第一篇文章，你可以在 Pages CMS 中修改或删除它。
-authors:
-  - me
 categories:
   - 日常
 tags:

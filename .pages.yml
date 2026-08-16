@@ -5,22 +5,16 @@ media:
     output: /uploads/blog
     rename: safe
     categories: [image]
-  - name: publication_files
-    label: 论文文件
-    input: static/uploads/publications
-    output: /uploads/publications
-    rename: safe
-    categories: [image, document]
 
 content:
   - name: blog
     label: 博客文章
     type: collection
-    path: content/blog
+    path: content/zh/blog
     exclude: ['_index.md']
     filename: '{primary}.md'
     view:
-      fields: [title, date, draft]
+      fields: [title, date, categories, draft]
       primary: title
       sort: [date, title]
       default:
@@ -38,11 +32,12 @@ content:
       - name: summary
         label: 摘要
         type: text
-      - name: authors
-        label: 作者
-        type: string
-        list: true
-        default: [me]
+        required: true
+      - name: cover
+        label: 封面图片
+        type: image
+        options:
+          media: blog_images
       - name: categories
         label: 分类
         type: string
@@ -66,121 +61,3 @@ content:
           media: blog_images
           path: static/uploads/blog
           rename: true
-
-  - name: publications
-    label: 论文
-    type: collection
-    path: content/publications
-    exclude: ['_index.md']
-    filename: '{title}.md'
-    view:
-      fields: [title, date, publication_types, featured]
-      primary: title
-      sort: [date, title]
-      default:
-        sort: date
-        order: desc
-    fields:
-      - name: title
-        label: 论文标题
-        type: string
-        required: true
-      - name: date
-        label: 发表日期
-        type: date
-        required: true
-      - name: authors
-        label: 作者
-        type: string
-        list: true
-      - name: publication
-        label: 发表信息
-        type: object
-        fields:
-          - name: name
-            label: 期刊或会议
-            type: string
-          - name: volume
-            label: 卷
-            type: string
-          - name: issue
-            label: 期
-            type: string
-      - name: publication_types
-        label: 类型编号
-        type: string
-        list: true
-      - name: abstract
-        label: 摘要
-        type: text
-      - name: links
-        label: 相关链接
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{type}'
-        fields:
-          - name: type
-            label: 类型
-            type: select
-            options:
-              values: [pdf, code, dataset, poster, project, slides, source, video, site]
-          - name: url
-            label: 链接
-            type: string
-      - name: featured
-        label: 代表作
-        type: boolean
-        default: false
-      - name: draft
-        label: 草稿
-        type: boolean
-        default: false
-      - name: body
-        label: 补充说明
-        type: rich-text
-        options:
-          media: publication_files
-
-  - name: projects
-    label: 项目
-    type: collection
-    path: content/projects
-    exclude: ['_index.md']
-    filename: '{title}.md'
-    view:
-      fields: [title, date, draft]
-      primary: title
-      sort: [date, title]
-      default:
-        sort: date
-        order: desc
-    fields:
-      - name: title
-        label: 项目名称
-        type: string
-        required: true
-      - name: date
-        label: 日期
-        type: date
-        required: true
-      - name: summary
-        label: 简介
-        type: text
-      - name: tags
-        label: 标签
-        type: string
-        list: true
-      - name: external_link
-        label: 项目链接
-        type: string
-      - name: draft
-        label: 草稿
-        type: boolean
-        default: false
-      - name: body
-        label: 项目介绍
-        type: rich-text
-        options:
-          media: blog_images

@@ -1,5 +1,37 @@
 zh:
   locale: zh-Hans
+  contentDir: content/zh
   title: Badstu
+  weight: 1
   params:
-    description: Badstu 的学术主页与个人博客
+    description: Badstu 的个人主页与生活博客
+  menus:
+    main:
+      - name: 首页
+        url: /
+        weight: 10
+      - name: 博客
+        url: /blog/
+        weight: 20
+      - name: 写文章
+        url: https://app.pagescms.org
+        weight: 30
+
+en:
+  locale: en-US
+  contentDir: content/en
+  title: Badstu
+  weight: 2
+  params:
+    description: Badstu's personal homepage and life blog
+  menus:
+    main:
+      - name: Home
+        url: /
+        weight: 10
+      - name: Blog
+        url: /blog/
+        weight: 20
+      - name: Write
+        url: https://app.pagescms.org
+        weight: 30

@@ -2,8 +2,7 @@
 title: 在星空下重新看见重要的事——读《小王子》
 date: 2026-08-15
 summary: 《小王子》用看似简单的童话提醒我们：关系需要时间，重要的事往往不能只用数字衡量。
-authors:
-  - me
+cover: /uploads/blog/reading-under-stars.png
 categories:
   - 阅读
   - 日常
