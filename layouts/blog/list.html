@@ -6,14 +6,17 @@
 {{ $years := slice }}
 {{ $months := slice }}
 {{ $categories := slice }}
+{{ $tags := slice }}
 {{ range $posts }}
   {{ $years = $years | append (string .Date.Year) }}
   {{ $months = $months | append (.Date.Format "2006-01") }}
   {{ range .Params.categories }}{{ $categories = $categories | append . }}{{ end }}
+  {{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}
 {{ end }}
 {{ $years = collections.Reverse (sort ($years | uniq)) }}
 {{ $months = collections.Reverse (sort ($months | uniq)) }}
 {{ $categories = sort ($categories | uniq) }}
+{{ $tags = sort ($tags | uniq) }}
 {{ $filterScript := resources.Get "js/blog-filter.js" | minify | fingerprint }}
 
 <main class="editorial-blog" data-blog-browser>
@@ -51,11 +54,12 @@
           {{ $categoryValues := .Params.categories | default (slice) }}
           <article
             data-blog-card
-            data-search="{{ printf "%s %s %s" .Title $summary (delimit $categoryValues " ") | lower }}"
+            data-search="{{ printf "%s %s %s %s" .Title $summary (delimit $categoryValues " ") (delimit (.Params.tags | default (slice)) " ") | lower }}"
             data-date="{{ .Date.Unix }}"
             data-year="{{ .Date.Year }}"
             data-month="{{ .Date.Format "2006-01" }}"
             data-categories="{{ delimit $categoryValues "|" }}"
+            data-tags="{{ delimit (.Params.tags | default (slice)) "|" }}"
             class="editorial-post-row{{ if not .Params.cover }} editorial-post-row-no-image{{ end }}">
             <div class="editorial-post-meta">
               <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
@@ -79,6 +83,14 @@
           <div class="archive-list" data-blog-filter-group="category">
             <button type="button" data-filter-value="" aria-pressed="true">{{ $labels.all }}</button>
             {{ range $categories }}<button type="button" data-filter-value="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+          </div>
+        </div>
+
+        <div class="archive-section">
+          <h2>{{ $labels.tags }}</h2>
+          <div class="archive-list" data-blog-filter-group="tag">
+            <button type="button" data-filter-value="" aria-pressed="true">{{ $labels.all }}</button>
+            {{ range $tags }}<button type="button" data-filter-value="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
           </div>
         </div>
 
@@ -121,7 +133,7 @@
         {{ range $posts }}
         {{ $summary := .Params.summary | default .Summary | plainify }}
         {{ $categoryValues := .Params.categories | default (slice) }}
-        <a href="{{ .RelPermalink }}" data-blog-search-result data-search="{{ printf "%s %s %s" .Title $summary (delimit $categoryValues " ") | lower }}">
+        <a href="{{ .RelPermalink }}" data-blog-search-result data-search="{{ printf "%s %s %s %s" .Title $summary (delimit $categoryValues " ") (delimit (.Params.tags | default (slice)) " ") | lower }}">
           <span>{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</span>
           <strong>{{ .Title }}</strong>
         </a>

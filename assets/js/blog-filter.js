@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = browser.querySelector('[data-blog-reset]');
   const sortButtons = Array.from(browser.querySelectorAll('[data-blog-sort]'));
   const filterGroups = Array.from(browser.querySelectorAll('[data-blog-filter-group]'));
-  const state = { year: '', month: '', category: '', sort: 'newest' };
+  const state = { year: '', month: '', category: '', tag: '', sort: 'newest' };
 
   const updatePressedState = (buttons, activeValue, attribute) => {
     buttons.forEach((button) => {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.year) parameters.set('year', state.year);
     if (state.month) parameters.set('month', state.month);
     if (state.category) parameters.set('category', state.category);
+    if (state.tag) parameters.set('tag', state.tag);
     if (state.sort !== 'newest') parameters.set('sort', state.sort);
     const query = parameters.toString();
     history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}`);
@@ -36,9 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let visibleCount = 0;
     sortedCards.forEach((card) => {
       const categories = card.dataset.categories.split('|').filter(Boolean);
+      const tags = card.dataset.tags.split('|').filter(Boolean);
       const visible = (!state.year || card.dataset.year === state.year)
         && (!state.month || card.dataset.month === state.month)
-        && (!state.category || categories.includes(state.category));
+        && (!state.category || categories.includes(state.category))
+        && (!state.tag || tags.includes(state.tag));
       card.hidden = !visible;
       if (visible) visibleCount += 1;
       grid.appendChild(card);
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   state.year = parameters.get('year') || '';
   state.month = parameters.get('month') || '';
   state.category = parameters.get('category') || '';
+  state.tag = parameters.get('tag') || '';
   state.sort = parameters.get('sort') === 'oldest' ? 'oldest' : 'newest';
 
   filterGroups.forEach((group) => {
@@ -82,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.year = '';
     state.month = '';
     state.category = '';
+    state.tag = '';
     state.sort = 'newest';
     applyFilters();
   });

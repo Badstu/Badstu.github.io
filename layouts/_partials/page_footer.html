@@ -1,7 +1,14 @@
 {{ with .GetTerms "tags" }}
 <nav class="editorial-article-tags" aria-label="Tags">
-  {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+  {{ range . }}<a href="{{ .RelPermalink }}" data-tag="{{ .LinkTitle }}">{{ .LinkTitle }}</a>{{ end }}
 </nav>
+{{ end }}
+
+{{ if and (eq .Section "blog") (eq .Kind "page") }}
+<div class="editorial-article-meta" data-article-meta>
+  <span><strong>{{ if eq .Lang "zh" }}创建于{{ else }}Published{{ end }}</strong><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ if eq .Lang "zh" }}{{ .Date.Format "2006-01-02 15:04:05" }}{{ else }}{{ .Date.Format "Jan 2, 2006 15:04:05" }}{{ end }}</time></span>
+  <span><strong>{{ if eq .Lang "zh" }}修改于{{ else }}Updated{{ end }}</strong><time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ if eq .Lang "zh" }}{{ .Lastmod.Format "2006-01-02 15:04:05" }}{{ else }}{{ .Lastmod.Format "Jan 2, 2006 15:04:05" }}{{ end }}</time></span>
+</div>
 {{ end }}
 
 {{ $comments := site.Params.hugoblox.comments }}

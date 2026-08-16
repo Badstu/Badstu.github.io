@@ -1,0 +1,25 @@
+{{ if and (eq .Section "blog") (eq .Kind "page") }}
+<script>
+  (() => {
+    const title = document.querySelector('.page-body article main > h1');
+    const metadata = document.querySelector('[data-article-meta]');
+    const tags = document.querySelector('.editorial-article-tags');
+    if (!title || !metadata) return;
+
+    const originalMetadata = title.nextElementSibling;
+    if (originalMetadata) {
+      originalMetadata.hidden = true;
+      originalMetadata.setAttribute('aria-hidden', 'true');
+    }
+
+    title.insertAdjacentElement('afterend', metadata);
+    if (tags) metadata.insertAdjacentElement('afterend', tags);
+
+    document.querySelectorAll('.editorial-article-tags a[data-tag]').forEach((tag) => {
+      let hash = 0;
+      for (const character of tag.dataset.tag) hash = ((hash << 5) - hash + character.charCodeAt(0)) | 0;
+      tag.classList.add(`tag-color-${Math.abs(hash) % 10}`);
+    });
+  })();
+</script>
+{{ end }}

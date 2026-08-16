@@ -10,6 +10,7 @@ filters:
   close: Close
   browse: Browse
   categories: Categories
+  tags: Tags
   years: Years
   months: Months
   sort: Order

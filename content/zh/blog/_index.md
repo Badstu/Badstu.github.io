@@ -10,6 +10,7 @@ filters:
   close: 关闭
   browse: 浏览文章
   categories: 分类
+  tags: 标签
   years: 年份
   months: 月份
   sort: 排序
