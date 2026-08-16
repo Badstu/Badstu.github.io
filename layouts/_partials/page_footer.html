@@ -1,0 +1,5 @@
+{{ with .GetTerms "tags" }}
+<nav class="editorial-article-tags" aria-label="Tags">
+  {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+</nav>
+{{ end }}

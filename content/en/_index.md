@@ -1,24 +1,24 @@
 ---
 title: Home
-description: Badstu's personal homepage for learning, research, technology, reading, and everyday life.
+description: Sean's personal homepage for learning, research, technology, reading, and everyday life.
 
 hero:
-  eyebrow: Welcome to my homepage
-  name: Badstu
+  eyebrow: Personal homepage · Notes on work and life
+  name: Sean
   role: '[Academic role / Current position]'
-  intro: I care about questions worth exploring over time, and I enjoy turning what I learn, build, and notice into notes that remain useful later.
+  intro: I care about questions worth exploring over time, and I enjoy turning what I learn, build, and notice into clear, honest notes worth returning to.
   affiliation: '[University / Lab / Organization]'
   location: '[City / Country]'
-  status: Learning and documenting in public
+  status: Learning and documenting
   primary_button: Read the blog
   secondary_button: Write a post
 
 about:
   title: About Me
-  lead: This is a space where professional growth and everyday life meet.
+  lead: This is a space where professional growth, reading, and everyday life meet.
   paragraphs:
     - My main field of study or research is “[research area to be added]”. I am currently interested in “[current topic to be added]” and hope to build a clearer body of knowledge through reading, practice, and writing.
-    - Beyond professional topics, I also write about books, travel, photography, useful tools, and everyday observations. The site does not follow one rigid theme; it values honesty, continuity, and ideas that compound over time.
+    - Beyond professional topics, I also write about books, travel, photography, useful tools, and everyday observations. The site does not chase trends or follow one rigid theme; it values honesty, continuity, and ideas that compound over time.
 
 facts:
   - label: Current Role
@@ -62,7 +62,7 @@ journey:
       text: '[Short description]'
 
 principles:
-  title: What I Hope to Practice Here
+  title: Writing Principles
   items:
     - Stay curious and keep asking better questions.
     - Document the process, not only the polished result.

@@ -2,7 +2,7 @@ hugoblox:
   schema: '2.0'
 
   identity:
-    name: Badstu
+    name: Sean
     organization: ''
     type: person
     tagline: Personal homepage and blog
@@ -13,22 +13,22 @@ hugoblox:
     mode: system
     pack: default
     colors:
-      primary: indigo
-      secondary: sky
-      neutral: slate
+      primary: stone
+      secondary: amber
+      neutral: stone
 
   typography:
     pack: academic
 
   layout:
-    radius: lg
+    radius: none
     spacing: comfortable
     avatar_shape: rounded
 
   header:
     enable: true
     align: center
-    sticky: true
+    sticky: false
     show_logo: true
     show_title: false
     search: true
@@ -38,7 +38,7 @@ hugoblox:
   footer:
     language_switcher: false
     copyright:
-      notice: '© {year} Badstu.'
+      notice: '© {year} Sean.'
 
   locale:
     date_format: '2006-01-02'

@@ -1,10 +1,10 @@
 zh:
   locale: zh-Hans
   contentDir: content/zh
-  title: Badstu
+  title: Sean
   weight: 1
   params:
-    description: Badstu 的个人主页与生活博客
+    description: Sean 的个人主页与生活博客
   menus:
     main:
       - name: 首页
@@ -20,10 +20,10 @@ zh:
 en:
   locale: en-US
   contentDir: content/en
-  title: Badstu
+  title: Sean
   weight: 2
   params:
-    description: Badstu's personal homepage and life blog
+    description: Sean's personal homepage and life blog
   menus:
     main:
       - name: Home

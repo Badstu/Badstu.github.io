@@ -1,13 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="logo-gradient" x1="9" y1="8" x2="55" y2="57" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4F46E5"/>
-      <stop offset="1" stop-color="#0284C7"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#logo-gradient)"/>
-  <path d="M15 23.5C21.5 20.4 27.2 20.7 32 24.4V45.5C26.5 41.8 21 41.3 15 44.2V23.5Z" fill="white" fill-opacity="0.96"/>
-  <path d="M49 23.5C42.5 20.4 36.8 20.7 32 24.4V45.5C37.5 41.8 43 41.3 49 44.2V23.5Z" fill="white" fill-opacity="0.78"/>
-  <circle cx="32" cy="15" r="3.2" fill="#FDE68A"/>
-  <path d="M23 15C25.8 10.8 38.2 10.8 41 15" stroke="#FDE68A" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+  <path d="M4.5 8.5C8.7 6.6 12.5 6.9 16 9.5V25C12.1 22.5 8.3 22.2 4.5 24V8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M27.5 8.5C23.3 6.6 19.5 6.9 16 9.5V25C19.9 22.5 23.7 22.2 27.5 24V8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M16 9.5V25" stroke="currentColor" stroke-width="1.8"/>
+  <circle cx="16" cy="5" r="1.5" fill="currentColor"/>
 </svg>

@@ -15,62 +15,32 @@
 {{ $categories = sort ($categories | uniq) }}
 {{ $filterScript := resources.Get "js/blog-filter.js" | minify | fingerprint }}
 
-<main class="px-6 py-16 sm:py-20" data-blog-browser>
-  <div class="mx-auto max-w-6xl">
-    <header class="max-w-3xl">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Journal</p>
-      <h1 class="text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">{{ .Title }}</h1>
-      <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">{{ .Params.intro }}</p>
+<main class="editorial-blog" data-blog-browser>
+  <div class="editorial-shell">
+    <header class="editorial-blog-header">
+      <p class="editorial-kicker">Writing · Notes · Journal</p>
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Params.intro }}</p>
     </header>
 
-    <section class="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/70 sm:p-6" aria-label="Blog filters">
-      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-        <label class="xl:col-span-2">
-          <span class="sr-only">{{ $labels.search }}</span>
-          <input type="search" data-blog-search placeholder="{{ $labels.search }}" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white" />
-        </label>
-        <label>
-          <span class="sr-only">{{ $labels.year }}</span>
-          <select data-blog-year class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-            <option value="">{{ $labels.year }}</option>
-            {{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
-          </select>
-        </label>
-        <label>
-          <span class="sr-only">{{ $labels.month }}</span>
-          <select data-blog-month class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-            <option value="">{{ $labels.month }}</option>
-            {{ range seq 1 12 }}
-              {{ $monthValue := printf "%02d" . }}
-              <option value="{{ $monthValue }}">{{ if eq $.Lang "zh" }}{{ . }}月{{ else }}{{ time.AsTime (printf "2026-%s-01" $monthValue) | time.Format "January" }}{{ end }}</option>
-            {{ end }}
-          </select>
-        </label>
-        <label>
-          <span class="sr-only">{{ $labels.category }}</span>
-          <select data-blog-category class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-            <option value="">{{ $labels.category }}</option>
-            {{ range $categories }}<option value="{{ . }}">{{ . }}</option>{{ end }}
-          </select>
-        </label>
-      </div>
-      <div class="mt-4 flex flex-col justify-between gap-4 border-t border-slate-200 pt-4 dark:border-slate-800 sm:flex-row sm:items-center">
-        <div class="flex items-center gap-3">
-          <label class="text-sm font-medium text-slate-600 dark:text-slate-300" for="blog-sort">{{ $labels.sort }}</label>
-          <select id="blog-sort" data-blog-sort class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-white">
-            <option value="newest">{{ $labels.newest }}</option>
-            <option value="oldest">{{ $labels.oldest }}</option>
-            <option value="title">{{ $labels.title_asc }}</option>
-          </select>
-        </div>
-        <div class="flex items-center justify-between gap-5 sm:justify-end">
-          <p class="text-sm text-slate-500 dark:text-slate-400"><strong data-blog-count>{{ len $posts }}</strong> {{ $labels.results }}</p>
-          <button type="button" data-blog-reset class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300">{{ $labels.reset }}</button>
-        </div>
-      </div>
+    <section class="editorial-filter-bar" aria-label="Blog filters">
+      <label class="editorial-search-field">
+        <span class="sr-only">{{ $labels.search }}</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <input type="search" data-blog-search placeholder="{{ $labels.search }}" />
+      </label>
+      <label><span class="sr-only">{{ $labels.year }}</span><select data-blog-year><option value="">{{ $labels.year }}</option>{{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></label>
+      <label><span class="sr-only">{{ $labels.month }}</span><select data-blog-month><option value="">{{ $labels.month }}</option>{{ range seq 1 12 }}{{ $monthValue := printf "%02d" . }}<option value="{{ $monthValue }}">{{ if eq $.Lang "zh" }}{{ . }}月{{ else }}{{ time.AsTime (printf "2026-%s-01" $monthValue) | time.Format "January" }}{{ end }}</option>{{ end }}</select></label>
+      <label><span class="sr-only">{{ $labels.category }}</span><select data-blog-category><option value="">{{ $labels.category }}</option>{{ range $categories }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></label>
+      <label><span class="sr-only">{{ $labels.sort }}</span><select data-blog-sort><option value="newest">{{ $labels.newest }}</option><option value="oldest">{{ $labels.oldest }}</option><option value="title">{{ $labels.title_asc }}</option></select></label>
     </section>
 
-    <section class="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-3" data-blog-grid>
+    <div class="editorial-filter-summary">
+      <p><strong data-blog-count>{{ len $posts }}</strong> {{ $labels.results }}</p>
+      <button type="button" data-blog-reset>{{ $labels.reset }}</button>
+    </div>
+
+    <section class="editorial-post-list" data-blog-grid>
       {{ range $posts }}
       {{ $post := . }}
       {{ $summary := .Params.summary | default .Summary | plainify }}
@@ -83,26 +53,24 @@
         data-year="{{ .Date.Year }}"
         data-month="{{ .Date.Format "01" }}"
         data-categories="{{ delimit $categoryValues "|" }}"
-        class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950">
-        {{ with .Params.cover }}
-        <a href="{{ $post.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" class="aspect-[16/9] w-full object-cover" loading="lazy" /></a>
-        {{ else }}
-        <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true"><div class="aspect-[16/9] bg-gradient-to-br from-indigo-500 via-violet-500 to-sky-500"></div></a>
-        {{ end }}
-        <div class="p-6">
-          <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006年1月2日" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
-            {{ range first 2 $categoryValues }}<span class="rounded-full bg-indigo-50 px-2.5 py-1 font-medium text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">{{ . }}</span>{{ end }}
-          </div>
-          <h2 class="mt-4 text-xl font-bold leading-snug text-slate-950 dark:text-white"><a href="{{ .RelPermalink }}" class="hover:text-indigo-600 dark:hover:text-indigo-400">{{ .Title }}</a></h2>
-          <p class="mt-3 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{{ $summary }}</p>
-          <a href="{{ .RelPermalink }}" class="mt-5 inline-flex font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300">{{ $labels.read_more }} →</a>
+        class="editorial-post-row{{ if not .Params.cover }} editorial-post-row-no-image{{ end }}">
+        <div class="editorial-post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq $.Lang "zh" }}{{ .Date.Format "2006.01.02" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</time>
+          {{ with $categoryValues }}{{ with index . 0 }}<span>{{ . }}</span>{{ end }}{{ end }}
         </div>
+        <div class="editorial-post-copy">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p>{{ $summary }}</p>
+          <a class="editorial-read-link" href="{{ .RelPermalink }}">{{ $labels.read_more }} <span aria-hidden="true">→</span></a>
+        </div>
+        {{ with .Params.cover }}
+        <a class="editorial-post-image" href="{{ $post.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" loading="lazy" /></a>
+        {{ end }}
       </article>
       {{ end }}
     </section>
 
-    <div data-blog-empty hidden class="mt-12 rounded-3xl border border-dashed border-slate-300 px-6 py-16 text-center text-slate-500 dark:border-slate-700 dark:text-slate-400">{{ $labels.empty }}</div>
+    <div data-blog-empty hidden class="editorial-empty">{{ $labels.empty }}</div>
   </div>
 </main>
 <script defer src="{{ $filterScript.RelPermalink }}" integrity="{{ $filterScript.Data.Integrity }}"></script>
