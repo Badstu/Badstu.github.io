@@ -884,7 +884,7 @@ body {
   margin: 0;
   color: var(--editorial-ink);
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(1.65rem, 4vw, 2.6rem);
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.045em;
@@ -918,13 +918,13 @@ body {
 
 .page-body article main.w-full .prose {
   max-width: none;
-  font-size: 0.86rem;
+  font-size: 0.98rem;
 }
 
 .page-body article main.w-full .prose > p:first-of-type {
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: 0.93rem;
-  line-height: 1.65;
+  font-size: 1.02rem;
+  line-height: 1.72;
 }
 
 .prose figure,
