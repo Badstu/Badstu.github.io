@@ -12,6 +12,12 @@ tags:
 featured: false
 draft: false
 ---
+> **一句话概括**：ChatLearn 把非母语者在 AI 辅助对话里遇到的表达困难自动变成学习材料，再用「情境复习卡」在对话间隙做间隔复习。43 对中英母语者的实验显示：它让回忆起的表达接近翻倍（3.91 vs 2.05，p<.001，d=1.21），沟通体验没明显下降。
+
+**作者**：Peinuan Qin, Yugin Tan（National University of Singapore）; Naomi Yamashita, Yi-Chieh Lee 等
+**论文**：Leveraging Non-Native Speaker Communication Challenges as Language Learning Opportunities
+**会议**：CHI 2026 · Barcelona
+
 ## 1 📖 背景 · 翻译工具只帮「这一次」，不帮长期学语言
 
 非母语者（NNS）跟母语者（NS）聊天时，常因为词汇量不够、语法不熟而卡壳，拖累协作质量。于是出现了 AI 中介沟通工具（AIMC，也就是 AI 在两人聊天时实时翻译、润色、辅助表达的软件）。
