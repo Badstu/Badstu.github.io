@@ -985,6 +985,8 @@ body {
 }
 
 .page-body article main.w-full {
+  box-sizing: border-box;
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
   padding: 50px 24px 66px;
