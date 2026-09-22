@@ -88,12 +88,7 @@ body {
   height: 40px;
 }
 
-#site-header .navbar-brand svg path:last-of-type {
-  color: var(--editorial-accent);
-}
-
 #site-header .navbar-brand:hover {
-  color: var(--editorial-accent);
   transform: translateY(-1px);
 }
 
