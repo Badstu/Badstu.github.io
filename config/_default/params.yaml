@@ -10,12 +10,12 @@ hugoblox:
     social: {}
 
   theme:
-    mode: system
+    mode: light
     pack: default
     colors:
-      primary: stone
-      secondary: amber
-      neutral: stone
+      primary: blue
+      secondary: sky
+      neutral: slate
 
   typography:
     pack: academic
@@ -32,7 +32,7 @@ hugoblox:
     show_logo: true
     show_title: false
     search: true
-    theme_toggle: true
+    theme_toggle: false
     language_switcher: true
 
   footer:

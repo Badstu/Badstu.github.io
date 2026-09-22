@@ -1,0 +1,12 @@
+<script>
+  (() => {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'light';
+
+    try {
+      localStorage.setItem('wc-color-theme', 'light');
+    } catch (_) {
+      // The CSS still enforces the light palette when storage is unavailable.
+    }
+  })();
+</script>
