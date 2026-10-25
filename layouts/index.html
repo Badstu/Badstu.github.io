@@ -20,14 +20,14 @@
 
       <div class="resume-layout">
         <aside class="resume-sidebar" aria-label="{{ $cv.title }}">
-          <div class="resume-status"><span aria-hidden="true"></span>{{ $profile.status }}</div>
+          {{ with $profile.status }}<div class="resume-status"><span aria-hidden="true"></span>{{ . }}</div>{{ end }}
 
           <dl class="resume-contact">
-            <div><dt>{{ if eq .Lang "zh" }}姓名{{ else }}Name{{ end }}</dt><dd>{{ $profile.name_zh }}</dd></div>
-            <div><dt>{{ if eq .Lang "zh" }}地点{{ else }}Location{{ end }}</dt><dd>{{ $profile.location }}</dd></div>
-            <div><dt>Email</dt><dd>{{ $profile.email }}</dd></div>
-            <div><dt>Scholar</dt><dd>{{ $profile.scholar }}</dd></div>
-            <div><dt>GitHub</dt><dd>{{ $profile.github }}</dd></div>
+            {{ with $profile.name_zh }}<div><dt>{{ if eq $.Lang "zh" }}姓名{{ else }}Name{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+            {{ with $profile.location }}<div><dt>{{ if eq $.Lang "zh" }}地点{{ else }}Location{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+            {{ with $profile.email }}<div><dt>{{ if eq $.Lang "zh" }}邮箱{{ else }}Email{{ end }}</dt><dd><a href="mailto:{{ . }}">{{ . }}</a></dd></div>{{ end }}
+            {{ with $profile.scholar }}<div><dt>Scholar</dt><dd><a href="{{ . }}">Google Scholar</a></dd></div>{{ end }}
+            {{ with $profile.github }}<div><dt>GitHub</dt><dd><a href="{{ . }}">GitHub</a></dd></div>{{ end }}
           </dl>
 
           <section class="resume-interests">
@@ -43,22 +43,25 @@
             <p>{{ $cv.introduction }}</p>
           </header>
 
+          {{ with $cv.education }}
           <section class="resume-block">
             <h3>{{ $cv.education_title }}</h3>
             <div class="resume-entries">
-              {{ range $cv.education }}
+              {{ range . }}
               <article>
-                <time>{{ .period }}</time>
-                <div><h4>{{ .degree }}</h4><p class="resume-organization">{{ .institution }}</p><p>{{ .detail }}</p></div>
+                <span class="resume-period">{{ .period }}</span>
+                <div><h4>{{ .degree }}</h4><p class="resume-organization">{{ .institution }}</p>{{ with .detail }}<p>{{ . }}</p>{{ end }}</div>
               </article>
               {{ end }}
             </div>
           </section>
+          {{ end }}
 
+          {{ with $cv.experience }}
           <section class="resume-block">
             <h3>{{ $cv.experience_title }}</h3>
             <div class="resume-entries">
-              {{ range $cv.experience }}
+              {{ range . }}
               <article>
                 <time>{{ .period }}</time>
                 <div><h4>{{ .role }}</h4><p class="resume-organization">{{ .organization }}</p><p>{{ .detail }}</p></div>
@@ -66,26 +69,35 @@
               {{ end }}
             </div>
           </section>
+          {{ end }}
 
+          {{ with $cv.publications }}
           <section class="resume-block">
             <h3>{{ $cv.publications_title }}</h3>
             <ol class="resume-publications">
-              {{ range $cv.publications }}
+              {{ range . }}
               <li><span>{{ .year }}</span><div><h4>{{ .title }}</h4><p>{{ .authors }}</p><p><em>{{ .venue }}</em> · {{ .note }}</p></div></li>
               {{ end }}
             </ol>
           </section>
+          {{ end }}
 
+          {{ if or $cv.skills $cv.service }}
           <section class="resume-block resume-compact-grid">
+            {{ with $cv.skills }}
             <div>
               <h3>{{ $cv.skills_title }}</h3>
-              <dl class="resume-skills">{{ range $cv.skills }}<div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>{{ end }}</dl>
+              <dl class="resume-skills">{{ range . }}<div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>{{ end }}</dl>
             </div>
+            {{ end }}
+            {{ with $cv.service }}
             <div>
               <h3>{{ $cv.service_title }}</h3>
-              <ul class="resume-service">{{ range $cv.service }}<li>{{ . }}</li>{{ end }}</ul>
+              <ul class="resume-service">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
             </div>
+            {{ end }}
           </section>
+          {{ end }}
         </div>
       </div>
     </div>

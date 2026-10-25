@@ -318,6 +318,16 @@ body {
   line-height: 1.55;
 }
 
+.resume-contact a {
+  color: var(--editorial-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.resume-contact a:hover {
+  color: var(--editorial-accent-strong);
+}
+
 .resume-interests {
   margin-top: 24px;
 }
@@ -398,6 +408,7 @@ body {
 }
 
 .resume-entries time,
+.resume-period,
 .resume-publications > li > span {
   color: var(--editorial-muted);
   font-size: 0.76rem;
