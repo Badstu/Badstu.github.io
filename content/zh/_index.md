@@ -11,7 +11,7 @@ profile:
 
 cv:
   title: 关于我
-  introduction: 我目前在华东师范大学攻读博士学位，处于博士二年级。在科研之外，我也在这里记录研究思考、技术实践、阅读与生活，欢迎通过邮件交流。
+  introduction: 我叫 Shanghui Yang。我目前在华东师范大学攻读博士学位，处于博士二年级。在科研之外，我也在这里记录研究思考、技术实践、阅读与生活，欢迎通过邮件交流。
   interests_title: 研究兴趣
   interests:
     - AI for Education · 人工智能教育应用

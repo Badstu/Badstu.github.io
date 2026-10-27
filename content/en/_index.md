@@ -11,7 +11,7 @@ profile:
 
 cv:
   title: About Me
-  introduction: I am a second-year PhD student at East China Normal University. Alongside research, I share research notes, technical explorations, reading reflections, and moments from everyday life here. Feel free to get in touch by email.
+  introduction: My name is Shanghui Yang. I am a second-year PhD student at East China Normal University. Alongside research, I share research notes, technical explorations, reading reflections, and moments from everyday life here. Feel free to get in touch by email.
   interests_title: Research Interests
   interests:
     - AI for Education
