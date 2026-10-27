@@ -2,7 +2,7 @@ hugoblox:
   schema: '2.0'
 
   identity:
-    name: Sean
+    name: Shanghui Yang
     organization: ''
     type: person
     tagline: Personal homepage and blog
@@ -38,7 +38,7 @@ hugoblox:
   footer:
     language_switcher: false
     copyright:
-      notice: '© {year} Sean.'
+      notice: '© {year} Shanghui Yang.'
 
   locale:
     date_format: '2006-01-02'

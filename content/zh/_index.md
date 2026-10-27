@@ -1,10 +1,9 @@
 ---
 title: 首页
-description: Sean，华东师范大学博士二年级学生，关注 AI for Education、Agents、LLMs 与 HCI。
+description: Shanghui Yang，华东师范大学博士二年级学生，关注 AI for Education、Agents、LLMs 与 HCI。
 
 profile:
-  eyebrow: 学术主页 · 个人博客
-  name: Sean
+  name: Shanghui Yang
   role: 博士研究生 · 二年级
   affiliation: 华东师范大学
   summary: 我的研究兴趣包括 AI for Education、智能体（Agents）、大语言模型（LLMs）和人机交互（HCI），关注人工智能在教育中的应用，以及人与智能系统的交互。
@@ -24,9 +23,12 @@ cv:
     - period: 在读
       degree: 博士研究生 · 二年级
       institution: 华东师范大学
+    - period: 已毕业
+      degree: 硕士
+      institution: 华东师范大学
 
 recent:
-  title: 最近文章
+  title: 我的博客
   intro: 关于研究、技术、阅读与生活的近期记录。
   empty: 暂时还没有文章。
   all: 查看全部文章

@@ -10,7 +10,7 @@
     <div class="editorial-shell">
       <header class="resume-masthead">
         <div>
-          <p class="editorial-kicker">{{ $profile.eyebrow }}</p>
+          {{ with $profile.eyebrow }}<p class="editorial-kicker">{{ . }}</p>{{ end }}
           <h1>{{ $profile.name }}</h1>
           <p class="resume-role">{{ $profile.role }}</p>
           <p class="resume-affiliation">{{ $profile.affiliation }}</p>

@@ -1,4 +1,4 @@
-# Sean Personal Homepage
+# Shanghui Yang Personal Homepage
 
 基于 HugoBlox 构建的中英文个人主页与博客，部署在 GitHub Pages。
 

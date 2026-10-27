@@ -1,10 +1,9 @@
 ---
 title: Home
-description: Sean, a second-year PhD student at East China Normal University, interested in AI for Education, Agents, LLMs, and HCI.
+description: Shanghui Yang, a second-year PhD student at East China Normal University, interested in AI for Education, Agents, LLMs, and HCI.
 
 profile:
-  eyebrow: Academic homepage · Personal blog
-  name: Sean
+  name: Shanghui Yang
   role: Second-year PhD Student
   affiliation: East China Normal University
   summary: My research interests include AI for Education, agents, large language models (LLMs), and human–computer interaction (HCI). I am interested in how AI can support education and how people interact with intelligent systems.
@@ -24,9 +23,12 @@ cv:
     - period: Ongoing
       degree: PhD Student · Second Year
       institution: East China Normal University
+    - period: Completed
+      degree: Master’s Degree
+      institution: East China Normal University
 
 recent:
-  title: Recent Writing
+  title: My Blog
   intro: Notes on research, technology, reading, and everyday life. Posts are currently in Chinese.
   empty: No posts yet.
   all: View all posts

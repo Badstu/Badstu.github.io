@@ -1,10 +1,10 @@
 zh:
   locale: zh-Hans
   contentDir: content/zh
-  title: Sean
+  title: Shanghui Yang
   weight: 1
   params:
-    description: Sean，华东师范大学博士二年级学生，关注 AI for Education、Agents、LLMs 与 HCI。
+    description: Shanghui Yang，华东师范大学博士二年级学生，关注 AI for Education、Agents、LLMs 与 HCI。
   menus:
     main:
       - name: 首页
@@ -17,10 +17,10 @@ zh:
 en:
   locale: en-US
   contentDir: content/en
-  title: Sean
+  title: Shanghui Yang
   weight: 2
   params:
-    description: Sean, a second-year PhD student at East China Normal University, interested in AI for Education, Agents, LLMs, and HCI.
+    description: Shanghui Yang, a second-year PhD student at East China Normal University, interested in AI for Education, Agents, LLMs, and HCI.
   menus:
     main:
       - name: Home
