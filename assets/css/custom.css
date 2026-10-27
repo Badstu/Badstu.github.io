@@ -230,9 +230,10 @@ body {
 
 .resume-masthead h1 {
   margin: 8px 0 12px;
-  font-size: clamp(3.8rem, 7vw, 5.8rem);
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
   font-weight: 500;
-  line-height: 0.9;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .resume-role {
@@ -1296,7 +1297,7 @@ body {
   }
 
   .resume-masthead h1 {
-    font-size: clamp(3.65rem, 19vw, 4.8rem);
+    font-size: clamp(1.75rem, 9vw, 3rem);
   }
 
   .resume-layout,
