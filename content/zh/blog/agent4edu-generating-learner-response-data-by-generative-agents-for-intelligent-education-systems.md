@@ -8,7 +8,7 @@ summary: |-
   2. 其次Memory Module 将长短期做题记录记录下来，并及时总结反思
   3. 最后Action Module 先选择题目、再阅读理解题目、最后解题。（有文本答案和解题过程）
 featured: false
-draft: true
+draft: false
 ---
 ![image.png](/uploads/blog/image.png)
 
