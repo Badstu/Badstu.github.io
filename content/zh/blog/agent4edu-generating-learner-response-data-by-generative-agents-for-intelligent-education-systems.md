@@ -7,6 +7,8 @@ summary: |-
   1. 首先Profile Module从学生历史答题序列里推导学生Profile（练习特征和认知特征）
   2. 其次Memory Module 将长短期做题记录记录下来，并及时总结反思
   3. 最后Action Module 先选择题目、再阅读理解题目、最后解题。（有文本答案和解题过程）
+categories:
+  - 论文笔记
 featured: false
 draft: false
 ---
@@ -19,7 +21,5 @@ draft: false
 3. 最后Action Module 先选择题目、再阅读理解题目、最后解题。（有文本答案和解题过程）
 
 
-
-&nbsp;
 
 &nbsp;
